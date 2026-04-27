@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karanpreet Kaur — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy2: #0f2044;
+    --blue: #1a56db;
+    --blue-light: #3b82f6;
+    --cyan: #06b6d4;
+    --white: #f0f6ff;
+    --gray: #8ba3c7;
+    --card: #0d1f3c;
+    --border: rgba(59,130,246,0.15);
+    --glow: rgba(26,86,219,0.3);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Grid background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(26,86,219,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26,86,219,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: rgba(10,22,40,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.5px;
+  }
+
+  .nav-logo span { color: var(--blue-light); }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 36px;
+  }
+
+  nav ul a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--gray);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+
+  nav ul a:hover { color: var(--white); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 60px 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-content { max-width: 700px; }
+
+  .hero-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--cyan);
+    letter-spacing: 0.15em;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--cyan);
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+  }
+
+  h1 .highlight {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--blue-light);
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    color: var(--gray);
+    line-height: 1.7;
+    max-width: 520px;
+    margin-bottom: 40px;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--blue);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.82rem;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+    border: 1px solid var(--blue);
+  }
+
+  .btn-primary:hover {
+    background: var(--blue-light);
+    border-color: var(--blue-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--glow);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.82rem;
+    letter-spacing: 0.05em;
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--blue-light);
+    color: var(--blue-light);
+    transform: translateY(-2px);
+  }
+
+  /* Floating orbs */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+  }
+
+  .orb-1 {
+    width: 400px; height: 400px;
+    background: rgba(26,86,219,0.12);
+    top: 10%; right: 5%;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .orb-2 {
+    width: 250px; height: 250px;
+    background: rgba(6,182,212,0.08);
+    bottom: 20%; right: 20%;
+    animation: float 6s ease-in-out infinite reverse;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 100px 60px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--cyan);
+    letter-spacing: 0.2em;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--cyan);
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 60px;
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .skill-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    transition: all 0.3s;
+  }
+
+  .skill-card:hover {
+    border-color: rgba(59,130,246,0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+  }
+
+  .skill-category {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--cyan);
+    letter-spacing: 0.1em;
+    margin-bottom: 14px;
+  }
+
+  .skill-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tag {
+    background: rgba(26,86,219,0.15);
+    border: 1px solid rgba(26,86,219,0.25);
+    color: var(--blue-light);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+  }
+
+  /* PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 24px;
+  }
+
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--blue), var(--cyan));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .project-card:hover::before { opacity: 1; }
+
+  .project-card:hover {
+    border-color: rgba(59,130,246,0.35);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+  }
+
+  .project-type {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--cyan);
+    letter-spacing: 0.15em;
+    margin-bottom: 14px;
+  }
+
+  .project-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
+  }
+
+  .project-card p {
+    color: var(--gray);
+    font-size: 0.9rem;
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  .project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 24px;
+  }
+
+  .stack-tag {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--gray);
+    padding: 3px 9px;
+    border-radius: 4px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+  }
+
+  .project-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--blue-light);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s;
+  }
+
+  .project-link:hover { gap: 10px; }
+
+  /* EXPERIENCE */
+  .experience-list { display: flex; flex-direction: column; gap: 24px; }
+
+  .exp-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    transition: border-color 0.3s;
+  }
+
+  .exp-card:hover { border-color: rgba(59,130,246,0.35); }
+
+  .exp-role {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .exp-company {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--cyan);
+    margin-bottom: 12px;
+  }
+
+  .exp-desc {
+    color: var(--gray);
+    font-size: 0.88rem;
+    line-height: 1.65;
+  }
+
+  .exp-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--gray);
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  /* EDUCATION */
+  .edu-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .edu-degree {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .edu-school {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--cyan);
+    margin-bottom: 12px;
+  }
+
+  .edu-details {
+    color: var(--gray);
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+
+  .edu-meta {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .gpa-badge {
+    background: rgba(26,86,219,0.2);
+    border: 1px solid rgba(26,86,219,0.3);
+    color: var(--blue-light);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+    text-align: center;
+  }
+
+  .dean-badge {
+    background: rgba(6,182,212,0.1);
+    border: 1px solid rgba(6,182,212,0.2);
+    color: var(--cyan);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    text-align: center;
+    display: block;
+  }
+
+  /* CONTACT */
+  .contact-section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 60px;
+    text-align: center;
+  }
+
+  .contact-section h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+  }
+
+  .contact-section p {
+    color: var(--gray);
+    font-size: 1rem;
+    margin-bottom: 40px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 32px 60px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  footer p {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--gray);
+  }
+
+  /* ANIMATIONS */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: fadeIn 0.7s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-in:nth-child(1) { animation-delay: 0.1s; }
+  .fade-in:nth-child(2) { animation-delay: 0.2s; }
+  .fade-in:nth-child(3) { animation-delay: 0.3s; }
+  .fade-in:nth-child(4) { animation-delay: 0.4s; }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 0 60px;
+  }
+
+  /* Cursor dot */
+  .cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1.1em;
+    background: var(--cyan);
+    margin-left: 4px;
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    nav ul { gap: 20px; }
+    .hero { padding: 100px 24px 60px; }
+    section { padding: 70px 24px; }
+    .divider { margin: 0 24px; }
+    footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
+    .edu-card { flex-direction: column; }
+    .edu-meta { text-align: left; }
+    .contact-section { padding: 40px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">KK<span>.</span></div>
+  <ul>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="hero-content">
+    <div class="hero-tag fade-in">BCIS CO-OP STUDENT · UFV · ABBOTSFORD BC</div>
+    <h1 class="fade-in">
+      Karanpreet<br>
+      <span class="highlight">Kaur</span><span class="cursor"></span>
+    </h1>
+    <p class="hero-desc fade-in">
+      Computer Information Systems student building full-stack web applications, cloud infrastructure, and data-driven systems. Seeking May 2026 co-op placement in IT, web development, or data analysis.
+    </p>
+    <div class="hero-buttons fade-in">
+      <a href="#projects" class="btn-primary">View Projects →</a>
+      <a href="https://github.com/karanpreet-kaur11" target="_blank" class="btn-outline">GitHub Profile</a>
+      <a href="#contact" class="btn-outline">Contact Me</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">WHAT I WORK WITH</div>
+  <h2 class="section-title">Technical Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-category">CLOUD & INFRASTRUCTURE</div>
+      <h3>DevOps & Systems</h3>
+      <div class="skill-tags">
+        <span class="tag">Docker</span>
+        <span class="tag">Kubernetes</span>
+        <span class="tag">Nginx</span>
+        <span class="tag">Linux</span>
+        <span class="tag">Bash</span>
+        <span class="tag">MariaDB</span>
+        <span class="tag">Containerization</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-category">BACKEND DEVELOPMENT</div>
+      <h3>Server-Side & APIs</h3>
+      <div class="skill-tags">
+        <span class="tag">Java</span>
+        <span class="tag">Spring Boot</span>
+        <span class="tag">Spring MVC</span>
+        <span class="tag">Spring Security</span>
+        <span class="tag">JPA/Hibernate</span>
+        <span class="tag">REST APIs</span>
+        <span class="tag">PHP</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-category">FRONTEND & WEB</div>
+      <h3>Client-Side Technologies</h3>
+      <div class="skill-tags">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">jQuery</span>
+        <span class="tag">HTMX</span>
+        <span class="tag">Thymeleaf</span>
+        <span class="tag">Bootstrap</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-category">DATA & DATABASES</div>
+      <h3>Data Management</h3>
+      <div class="skill-tags">
+        <span class="tag">SQL</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">Database Design</span>
+        <span class="tag">ER Modeling</span>
+        <span class="tag">Normalization</span>
+        <span class="tag">JPQL</span>
+        <span class="tag">Microsoft Excel</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-category">SECURITY & NETWORKING</div>
+      <h3>Security Fundamentals</h3>
+      <div class="skill-tags">
+        <span class="tag">Information Security</span>
+        <span class="tag">BCrypt</span>
+        <span class="tag">Session Management</span>
+        <span class="tag">Social Engineering</span>
+        <span class="tag">Networking</span>
+        <span class="tag">OSI Model</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-category">TOOLS & PRACTICES</div>
+      <h3>Development Tools</h3>
+      <div class="skill-tags">
+        <span class="tag">Git/GitHub</span>
+        <span class="tag">IntelliJ IDEA</span>
+        <span class="tag">VS Code</span>
+        <span class="tag">Processing</span>
+        <span class="tag">Microsoft 365</span>
+        <span class="tag">SharePoint</span>
+        <span class="tag">Documentation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">WHAT I'VE BUILT</div>
+  <h2 class="section-title">Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-type">CLOUD INFRASTRUCTURE</div>
+      <h3>WordPress Service Stack</h3>
+      <p>Deployed a fully containerized WordPress service stack on Linux using Docker and MariaDB. Configured Kubernetes for container orchestration, set up Nginx as a reverse proxy, and wrote Bash automation scripts for backups. Documented full system architecture and deployment procedures.</p>
+      <div class="project-stack">
+        <span class="stack-tag">Docker</span>
+        <span class="stack-tag">Kubernetes</span>
+        <span class="stack-tag">Nginx</span>
+        <span class="stack-tag">MariaDB</span>
+        <span class="stack-tag">Bash</span>
+        <span class="stack-tag">Linux</span>
+      </div>
+      <a href="https://github.com/karanpreet-kaur11" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-type">FULL STACK · JAVA · SPRING BOOT</div>
+      <h3>Campus Store Management System</h3>
+      <p>Full e-commerce web application with admin and customer roles. Features include product catalog with filtering/sorting/pagination, order management with stock deduction, user authentication with BCrypt encryption, and role-based access control. Built with Spring Boot, Thymeleaf, and MySQL.</p>
+      <div class="project-stack">
+        <span class="stack-tag">Java</span>
+        <span class="stack-tag">Spring Boot</span>
+        <span class="stack-tag">Spring Security</span>
+        <span class="stack-tag">Thymeleaf</span>
+        <span class="stack-tag">MySQL</span>
+        <span class="stack-tag">JPA</span>
+      </div>
+      <a href="https://github.com/karanpreet-kaur11/project" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-type">FULL STACK · HTMX · SPRING BOOT</div>
+      <h3>Study Tracker App</h3>
+      <p>Academic task management application with dynamic partial page updates using HTMX. Features CRUD operations, enforced status transitions (PENDING → IN_PROGRESS → COMPLETED), a KPI dashboard with task counts, and course-based task grouping. Zero full page reloads.</p>
+      <div class="project-stack">
+        <span class="stack-tag">Java</span>
+        <span class="stack-tag">Spring Boot</span>
+        <span class="stack-tag">HTMX</span>
+        <span class="stack-tag">Thymeleaf</span>
+        <span class="stack-tag">MySQL</span>
+        <span class="stack-tag">Bootstrap</span>
+      </div>
+      <a href="https://github.com/karanpreet-kaur11" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-type">OOP · GAME DEVELOPMENT · SECURITY</div>
+      <h3>Cybersecurity Defense Game</h3>
+      <p>Interactive cybersecurity-themed game where players defend a server by scanning and destroying malicious network packets. Built with 3-level class inheritance, FSM with 4 states, and two distinct UI versions tested with 15 participants. Compared data-driven vs simplified visual interfaces.</p>
+      <div class="project-stack">
+        <span class="stack-tag">Java</span>
+        <span class="stack-tag">Processing</span>
+        <span class="stack-tag">OOP</span>
+        <span class="stack-tag">FSM</span>
+        <span class="stack-tag">UI/UX Research</span>
+      </div>
+      <a href="https://github.com/karanpreet-kaur11/COMP350GroupProjectVersion1" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-type">FULL STACK · PHP · WEB APP</div>
+      <h3>UrbanBite Restaurant Platform</h3>
+      <p>Full-stack restaurant ordering and management platform with customer and admin interfaces. Implemented forms, modal dialogs, JavaScript validation, and documented application workflows throughout development. Delivered formal presentation explaining problem, solution, and business value.</p>
+      <div class="project-stack">
+        <span class="stack-tag">HTML</span>
+        <span class="stack-tag">CSS</span>
+        <span class="stack-tag">JavaScript</span>
+        <span class="stack-tag">PHP</span>
+        <span class="stack-tag">jQuery</span>
+      </div>
+      <a href="https://github.com/karanpreet-kaur11" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-type">DATABASE DESIGN · SQL</div>
+      <h3>Hospital Management Database</h3>
+      <p>Designed a relational database system to manage patient records, appointments, and billing. Applied normalization techniques (1NF–3NF), data integrity constraints, and wrote SQL queries for data retrieval and operational reporting. Built ER diagrams and documented the full schema.</p>
+      <div class="project-stack">
+        <span class="stack-tag">SQL</span>
+        <span class="stack-tag">MySQL</span>
+        <span class="stack-tag">ER Modeling</span>
+        <span class="stack-tag">Normalization</span>
+        <span class="stack-tag">Database Design</span>
+      </div>
+      <a href="https://github.com/karanpreet-kaur11" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-type">REST API · SPRING BOOT</div>
+      <h3>Task REST API</h3>
+      <p>Simple in-memory Task REST API built with Spring Boot demonstrating RESTful endpoint design, HTTP methods, and JSON response handling. Clean architecture with service and controller layers.</p>
+      <div class="project-stack">
+        <span class="stack-tag">Java</span>
+        <span class="stack-tag">Spring Boot</span>
+        <span class="stack-tag">REST API</span>
+        <span class="stack-tag">JSON</span>
+      </div>
+      <a href="https://github.com/karanpreet-kaur11/task-api" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-type">JPA · HIBERNATE · MULTI-TABLE</div>
+      <h3>Multi-Table JPA Application</h3>
+      <p>Multi-table database application using JPA, Hibernate, and JPQL demonstrating entity relationships, cascade operations, and complex queries across related tables.</p>
+      <div class="project-stack">
+        <span class="stack-tag">Java</span>
+        <span class="stack-tag">JPA</span>
+        <span class="stack-tag">Hibernate</span>
+        <span class="stack-tag">JPQL</span>
+        <span class="stack-tag">MySQL</span>
+      </div>
+      <a href="https://github.com/karanpreet-kaur11/Multi-Table_Application" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">WHERE I'VE WORKED</div>
+  <h2 class="section-title">Experience</h2>
+  <div class="experience-list">
+    <div class="exp-card">
+      <div>
+        <div class="exp-role">Grocery Clerk / Cashier (Shift Lead)</div>
+        <div class="exp-company">SABZI MANDI SUPERMARKET · Abbotsford, BC</div>
+        <div class="exp-desc">
+          Supported daily operations using POS and digital inventory management systems. Troubleshot system and transaction issues, trained and onboarded 3–4 employees on system use, and maintained accurate data records across daily operations.
+        </div>
+      </div>
+      <div class="exp-date">May 2023<br>— Present</div>
+    </div>
+    <div class="exp-card">
+      <div>
+        <div class="exp-role">Cashier</div>
+        <div class="exp-company">DALJEET MEDICAL HALL (PHARMACY) · India</div>
+        <div class="exp-desc">
+          Operated computerized billing and inventory systems in a regulated pharmacy environment. Maintained accurate digital transaction and inventory records.
+        </div>
+      </div>
+      <div class="exp-date">Nov 2020<br>— Jun 2022</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-label">WHERE I STUDY</div>
+  <h2 class="section-title">Education</h2>
+  <div class="edu-card">
+    <div>
+      <div class="edu-degree">Bachelor of Computer Information Systems</div>
+      <div class="edu-school">UNIVERSITY OF THE FRASER VALLEY · Abbotsford, BC · Co-op Program</div>
+      <div class="edu-details">
+        <strong>Relevant Courses:</strong> Operating Systems · Networking · Databases · Advanced Web Programming · Information Systems Security · Virtualization & Cloud Infrastructure · Project Management · UI Design · End User Training & Support · Public Speaking
+        <br><br>
+        <strong>Achievement:</strong> Dean's List — Winter 2025
+      </div>
+    </div>
+    <div class="edu-meta">
+      <span class="gpa-badge">GPA 3.35</span>
+      <span class="dean-badge">🏆 Dean's List</span>
+      <br>
+      <span style="font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--gray);">2023 — 2027</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-section">
+    <div class="section-label" style="justify-content: center;">GET IN TOUCH</div>
+    <h2>Let's Work Together</h2>
+    <p>I'm actively seeking May 2026 co-op placements in IT, web development, cloud infrastructure, or data analysis. Open to on-site, hybrid, or remote roles in Abbotsford and Vancouver area.</p>
+    <div class="contact-links">
+      <a href="mailto:karanpreet13kaur@gmail.com" class="btn-primary">Email Me →</a>
+      <a href="https://linkedin.com/in/karanpreet13kaur" target="_blank" class="btn-outline">LinkedIn</a>
+      <a href="https://github.com/karanpreet-kaur11" target="_blank" class="btn-outline">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Karanpreet Kaur · Built with HTML/CSS/JS</p>
+  <p>Abbotsford, BC · Available May 2026</p>
+</footer>
+
+<script>
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Intersection observer for scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.skill-card, .project-card, .exp-card, .edu-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
