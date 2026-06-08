@@ -7,16 +7,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #0a1628;
-    --navy2: #0f2044;
-    --blue: #1a56db;
-    --blue-light: #3b82f6;
-    --cyan: #06b6d4;
-    --white: #f0f6ff;
-    --gray: #8ba3c7;
-    --card: #0d1f3c;
-    --border: rgba(59,130,246,0.15);
-    --glow: rgba(26,86,219,0.3);
+    --navy: #f7f4ed;
+    --navy2: #efe9dc;
+    --blue: #4a7c59;
+    --blue-light: #5d9170;
+    --cyan: #8a9a5b;
+    --white: #2d3a2e;
+    --gray: #6b6456;
+    --card: #ffffff;
+    --border: rgba(74,124,89,0.18);
+    --glow: rgba(74,124,89,0.18);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -36,8 +36,8 @@
     position: fixed;
     inset: 0;
     background-image:
-      linear-gradient(rgba(26,86,219,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(26,86,219,0.04) 1px, transparent 1px);
+      linear-gradient(rgba(74,124,89,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74,124,89,0.05) 1px, transparent 1px);
     background-size: 40px 40px;
     pointer-events: none;
     z-index: 0;
@@ -52,7 +52,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 60px;
-    background: rgba(10,22,40,0.85);
+    background: rgba(247,244,237,0.9);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
   }
@@ -124,8 +124,8 @@
   }
 
   h1 .highlight {
-    color: transparent;
-    -webkit-text-stroke: 1.5px var(--blue-light);
+    color: var(--blue);
+    -webkit-text-stroke: 0;
   }
 
   .hero-desc {
@@ -144,7 +144,7 @@
 
   .btn-primary {
     background: var(--blue);
-    color: white;
+    color: #ffffff;
     padding: 14px 28px;
     border-radius: 6px;
     text-decoration: none;
@@ -259,7 +259,7 @@
   .skill-card:hover {
     border-color: rgba(59,130,246,0.4);
     transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+    box-shadow: 0 12px 32px rgba(74,124,89,0.12);
   }
 
   .skill-category {
@@ -284,9 +284,9 @@
   }
 
   .tag {
-    background: rgba(26,86,219,0.15);
-    border: 1px solid rgba(26,86,219,0.25);
-    color: var(--blue-light);
+    background: rgba(74,124,89,0.1);
+    border: 1px solid rgba(74,124,89,0.25);
+    color: #3a6347;
     padding: 4px 10px;
     border-radius: 4px;
     font-family: 'DM Mono', monospace;
@@ -326,7 +326,7 @@
   .project-card:hover {
     border-color: rgba(59,130,246,0.35);
     transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    box-shadow: 0 16px 40px rgba(74,124,89,0.15);
   }
 
   .project-type {
@@ -360,9 +360,9 @@
   }
 
   .stack-tag {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
-    color: var(--gray);
+    background: rgba(138,154,91,0.12);
+    border: 1px solid rgba(138,154,91,0.25);
+    color: #5c6638;
     padding: 3px 9px;
     border-radius: 4px;
     font-family: 'DM Mono', monospace;
@@ -465,9 +465,9 @@
   }
 
   .gpa-badge {
-    background: rgba(26,86,219,0.2);
-    border: 1px solid rgba(26,86,219,0.3);
-    color: var(--blue-light);
+    background: rgba(74,124,89,0.15);
+    border: 1px solid rgba(74,124,89,0.3);
+    color: var(--blue);
     padding: 8px 16px;
     border-radius: 6px;
     font-family: 'DM Mono', monospace;
@@ -479,9 +479,9 @@
   }
 
   .dean-badge {
-    background: rgba(6,182,212,0.1);
-    border: 1px solid rgba(6,182,212,0.2);
-    color: var(--cyan);
+    background: rgba(138,154,91,0.15);
+    border: 1px solid rgba(138,154,91,0.3);
+    color: #6b7a3a;
     padding: 6px 12px;
     border-radius: 6px;
     font-family: 'DM Mono', monospace;
@@ -565,20 +565,7 @@
   }
 
   /* Cursor dot */
-  .cursor {
-    display: inline-block;
-    width: 3px;
-    height: 1.1em;
-    background: var(--cyan);
-    margin-left: 4px;
-    vertical-align: middle;
-    animation: blink 1s step-end infinite;
-  }
-
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
+  .cursor { display: none; }
 
   @media (max-width: 768px) {
     nav { padding: 16px 24px; }
@@ -612,13 +599,13 @@
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
   <div class="hero-content">
-    <div class="hero-tag fade-in">BCIS CO-OP STUDENT · UFV · ABBOTSFORD BC</div>
+    <div class="hero-tag fade-in">BCIS STUDENT · UFV · ABBOTSFORD BC</div>
     <h1 class="fade-in">
       Karanpreet<br>
       <span class="highlight">Kaur</span><span class="cursor"></span>
     </h1>
     <p class="hero-desc fade-in">
-      Computer Information Systems student building full-stack web applications, cloud infrastructure, and data-driven systems. Seeking May 2026 co-op placement in IT, web development, or data analysis.
+      Computer Information Systems student at UFV building web applications, databases, and backend systems. I enjoy turning ideas into working software — from front-end interfaces to database design to server-side logic. Currently seeking work experience opportunities in web development, IT support, or data roles.
     </p>
     <div class="hero-buttons fade-in">
       <a href="#projects" class="btn-primary">View Projects →</a>
@@ -636,16 +623,17 @@
   <h2 class="section-title">Technical Skills</h2>
   <div class="skills-grid">
     <div class="skill-card">
-      <div class="skill-category">CLOUD & INFRASTRUCTURE</div>
-      <h3>DevOps & Systems</h3>
+      <div class="skill-category">FRONTEND & WEB</div>
+      <h3>Web Development</h3>
       <div class="skill-tags">
-        <span class="tag">Docker</span>
-        <span class="tag">Kubernetes</span>
-        <span class="tag">Nginx</span>
-        <span class="tag">Linux</span>
-        <span class="tag">Bash</span>
-        <span class="tag">MariaDB</span>
-        <span class="tag">Containerization</span>
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">jQuery</span>
+        <span class="tag">Bootstrap</span>
+        <span class="tag">PHP</span>
+        <span class="tag">Thymeleaf</span>
+        <span class="tag">HTMX</span>
       </div>
     </div>
     <div class="skill-card">
@@ -654,29 +642,16 @@
       <div class="skill-tags">
         <span class="tag">Java</span>
         <span class="tag">Spring Boot</span>
-        <span class="tag">Spring MVC</span>
         <span class="tag">Spring Security</span>
         <span class="tag">JPA/Hibernate</span>
         <span class="tag">REST APIs</span>
-        <span class="tag">PHP</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-category">FRONTEND & WEB</div>
-      <h3>Client-Side Technologies</h3>
-      <div class="skill-tags">
-        <span class="tag">HTML</span>
-        <span class="tag">CSS</span>
-        <span class="tag">JavaScript</span>
-        <span class="tag">jQuery</span>
-        <span class="tag">HTMX</span>
-        <span class="tag">Thymeleaf</span>
-        <span class="tag">Bootstrap</span>
+        <span class="tag">BCrypt</span>
+        <span class="tag">Session Management</span>
       </div>
     </div>
     <div class="skill-card">
       <div class="skill-category">DATA & DATABASES</div>
-      <h3>Data Management</h3>
+      <h3>Database Design</h3>
       <div class="skill-tags">
         <span class="tag">SQL</span>
         <span class="tag">MySQL</span>
@@ -688,15 +663,26 @@
       </div>
     </div>
     <div class="skill-card">
-      <div class="skill-category">SECURITY & NETWORKING</div>
+      <div class="skill-category">IT & SUPPORT</div>
+      <h3>IT Skills</h3>
+      <div class="skill-tags">
+        <span class="tag">Windows OS</span>
+        <span class="tag">Linux (basic)</span>
+        <span class="tag">Troubleshooting</span>
+        <span class="tag">End-User Support</span>
+        <span class="tag">Documentation</span>
+        <span class="tag">Networking basics</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-category">SECURITY</div>
       <h3>Security Fundamentals</h3>
       <div class="skill-tags">
         <span class="tag">Information Security</span>
-        <span class="tag">BCrypt</span>
-        <span class="tag">Session Management</span>
         <span class="tag">Social Engineering</span>
-        <span class="tag">Networking</span>
-        <span class="tag">OSI Model</span>
+        <span class="tag">Phishing Awareness</span>
+        <span class="tag">Secure Auth</span>
+        <span class="tag">OS Security</span>
       </div>
     </div>
     <div class="skill-card">
@@ -708,8 +694,7 @@
         <span class="tag">VS Code</span>
         <span class="tag">Processing</span>
         <span class="tag">Microsoft 365</span>
-        <span class="tag">SharePoint</span>
-        <span class="tag">Documentation</span>
+        <span class="tag">Docker (basics)</span>
       </div>
     </div>
   </div>
@@ -724,18 +709,16 @@
   <div class="projects-grid">
 
     <div class="project-card">
-      <div class="project-type">CLOUD INFRASTRUCTURE</div>
+      <div class="project-type">CLOUD & VIRTUALIZATION · COURSEWORK</div>
       <h3>WordPress Service Stack</h3>
-      <p>Deployed a fully containerized WordPress service stack on Linux using Docker and MariaDB. Configured Kubernetes for container orchestration, set up Nginx as a reverse proxy, and wrote Bash automation scripts for backups. Documented full system architecture and deployment procedures.</p>
+      <p>Course project (CIS 395) where I deployed a WordPress stack using Docker containers and MariaDB. Set up Nginx as a web server, wrote basic Bash scripts for backups, and documented the full architecture and setup process. Learned containerization fundamentals through hands-on deployment.</p>
       <div class="project-stack">
         <span class="stack-tag">Docker</span>
-        <span class="stack-tag">Kubernetes</span>
         <span class="stack-tag">Nginx</span>
         <span class="stack-tag">MariaDB</span>
         <span class="stack-tag">Bash</span>
         <span class="stack-tag">Linux</span>
       </div>
-      <a href="https://github.com/karanpreet-kaur11" target="_blank" class="project-link">View on GitHub →</a>
     </div>
 
     <div class="project-card">
@@ -765,7 +748,7 @@
         <span class="stack-tag">MySQL</span>
         <span class="stack-tag">Bootstrap</span>
       </div>
-      <a href="https://github.com/karanpreet-kaur11" target="_blank" class="project-link">View on GitHub →</a>
+      <a href="https://github.com/karanpreet-kaur11/finalexamcomp351" target="_blank" class="project-link">View on GitHub →</a>
     </div>
 
     <div class="project-card">
@@ -793,7 +776,6 @@
         <span class="stack-tag">PHP</span>
         <span class="stack-tag">jQuery</span>
       </div>
-      <a href="https://github.com/karanpreet-kaur11" target="_blank" class="project-link">View on GitHub →</a>
     </div>
 
     <div class="project-card">
@@ -807,13 +789,12 @@
         <span class="stack-tag">Normalization</span>
         <span class="stack-tag">Database Design</span>
       </div>
-      <a href="https://github.com/karanpreet-kaur11" target="_blank" class="project-link">View on GitHub →</a>
     </div>
 
     <div class="project-card">
       <div class="project-type">REST API · SPRING BOOT</div>
       <h3>Task REST API</h3>
-      <p>Simple in-memory Task REST API built with Spring Boot demonstrating RESTful endpoint design, HTTP methods, and JSON response handling. Clean architecture with service and controller layers.</p>
+      <p>A Task REST API built with Spring Boot demonstrating RESTful endpoint design, HTTP methods (GET, POST, PUT, DELETE), and JSON response handling with clean controller and service layers.</p>
       <div class="project-stack">
         <span class="stack-tag">Java</span>
         <span class="stack-tag">Spring Boot</span>
@@ -824,9 +805,9 @@
     </div>
 
     <div class="project-card">
-      <div class="project-type">JPA · HIBERNATE · MULTI-TABLE</div>
+      <div class="project-type">JPA · HIBERNATE · DATABASES</div>
       <h3>Multi-Table JPA Application</h3>
-      <p>Multi-table database application using JPA, Hibernate, and JPQL demonstrating entity relationships, cascade operations, and complex queries across related tables.</p>
+      <p>A multi-table database application using JPA, Hibernate, and JPQL — demonstrating entity relationships, mapping between related tables, and writing queries across them.</p>
       <div class="project-stack">
         <span class="stack-tag">Java</span>
         <span class="stack-tag">JPA</span>
@@ -835,6 +816,32 @@
         <span class="stack-tag">MySQL</span>
       </div>
       <a href="https://github.com/karanpreet-kaur11/Multi-Table_Application" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-type">SECURITY · SPRING BOOT</div>
+      <h3>Security & Session Demo</h3>
+      <p>A Spring Boot application demonstrating secure user authentication and session management — exploring how login security, sessions, and protected routes work in a web application.</p>
+      <div class="project-stack">
+        <span class="stack-tag">Java</span>
+        <span class="stack-tag">Spring Boot</span>
+        <span class="stack-tag">Spring Security</span>
+        <span class="stack-tag">Sessions</span>
+      </div>
+      <a href="https://github.com/karanpreet-kaur11/Securitysessiondemo.food" target="_blank" class="project-link">View on GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-type">FRONTEND · UI</div>
+      <h3>Secure Task UI</h3>
+      <p>A front-end interface project for a task management system, focused on building clean, user-friendly UI to interact with task data.</p>
+      <div class="project-stack">
+        <span class="stack-tag">HTML</span>
+        <span class="stack-tag">CSS</span>
+        <span class="stack-tag">JavaScript</span>
+        <span class="stack-tag">UI Design</span>
+      </div>
+      <a href="https://github.com/karanpreet-kaur11/secure-task-ui" target="_blank" class="project-link">View on GitHub →</a>
     </div>
 
   </div>
@@ -887,7 +894,7 @@
       </div>
     </div>
     <div class="edu-meta">
-      <span class="gpa-badge">GPA 3.35</span>
+      <span class="gpa-badge">GPA 3.40</span>
       <span class="dean-badge">🏆 Dean's List</span>
       <br>
       <span style="font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--gray);">2023 — 2027</span>
@@ -902,7 +909,7 @@
   <div class="contact-section">
     <div class="section-label" style="justify-content: center;">GET IN TOUCH</div>
     <h2>Let's Work Together</h2>
-    <p>I'm actively seeking May 2026 co-op placements in IT, web development, cloud infrastructure, or data analysis. Open to on-site, hybrid, or remote roles in Abbotsford and Vancouver area.</p>
+    <p>I'm a BCIS student at UFV actively looking for work experience in web development, IT support, or data roles. Based in Abbotsford, BC — open to on-site, hybrid, or remote opportunities.</p>
     <div class="contact-links">
       <a href="mailto:karanpreet13kaur@gmail.com" class="btn-primary">Email Me →</a>
       <a href="https://linkedin.com/in/karanpreet13kaur" target="_blank" class="btn-outline">LinkedIn</a>
@@ -914,7 +921,7 @@
 <!-- FOOTER -->
 <footer>
   <p>© 2026 Karanpreet Kaur · Built with HTML/CSS/JS</p>
-  <p>Abbotsford, BC · Available May 2026</p>
+  <p>Abbotsford, BC · Open to opportunities</p>
 </footer>
 
 <script>
