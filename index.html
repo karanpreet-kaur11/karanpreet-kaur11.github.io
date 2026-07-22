@@ -3,952 +3,387 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Karanpreet Kaur — Portfolio</title>
+<title>Karanpreet Kaur — Computer Information Systems Student & Future Software Engineer</title>
+<meta name="description" content="Portfolio of Karanpreet Kaur, a Computer Information Systems student at the University of the Fraser Valley building full-stack web applications, databases, and backend systems in Java, Spring Boot, and SQL. Open to work in Abbotsford, BC.">
+<meta name="keywords" content="Karanpreet Kaur, Computer Information Systems, UFV, software engineer portfolio, Java developer, Spring Boot developer, full stack developer, Abbotsford BC">
+<meta name="author" content="Karanpreet Kaur">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#06090a">
+<link rel="canonical" href="https://karanpreet-kaur11.github.io/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://karanpreet-kaur11.github.io/">
+<meta property="og:title" content="Karanpreet Kaur — Computer Information Systems Student & Future Software Engineer">
+<meta property="og:description" content="Full-stack projects in Java, Spring Boot, and SQL from a BCIS student at UFV — open to work in web development, IT support, and data roles.">
+<meta property="og:image" content="https://karanpreet-kaur11.github.io/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_CA">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Karanpreet Kaur — Computer Information Systems Student & Future Software Engineer">
+<meta name="twitter:description" content="Full-stack projects in Java, Spring Boot, and SQL from a BCIS student at UFV — open to work in web development, IT support, and data roles.">
+<meta name="twitter:image" content="https://karanpreet-kaur11.github.io/assets/img/og-image.png">
+
+<!-- Icons -->
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="manifest" href="site.webmanifest">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Karanpreet Kaur",
+  "url": "https://karanpreet-kaur11.github.io/",
+  "sameAs": [
+    "https://github.com/karanpreet-kaur11",
+    "https://linkedin.com/in/karanpreet13kaur"
+  ],
+  "jobTitle": "Computer Information Systems Student",
+  "email": "mailto:karanpreet13kaur@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Abbotsford",
+    "addressRegion": "BC",
+    "addressCountry": "CA"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "University of the Fraser Valley"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --navy: #f7f4ed;
-    --navy2: #efe9dc;
-    --blue: #4a7c59;
-    --blue-light: #5d9170;
-    --cyan: #8a9a5b;
-    --white: #2d3a2e;
-    --gray: #6b6456;
-    --card: #ffffff;
-    --border: rgba(74,124,89,0.18);
-    --glow: rgba(74,124,89,0.18);
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--navy);
-    color: var(--white);
-    font-family: 'DM Sans', sans-serif;
-    overflow-x: hidden;
-  }
-
-  /* Grid background */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(74,124,89,0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(74,124,89,0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  /* NAV */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 60px;
-    background: rgba(247,244,237,0.9);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .nav-logo {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: var(--white);
-    letter-spacing: -0.5px;
-  }
-
-  .nav-logo span { color: var(--blue-light); }
-
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 36px;
-  }
-
-  nav ul a {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.8rem;
-    color: var(--gray);
-    text-decoration: none;
-    letter-spacing: 0.05em;
-    transition: color 0.2s;
-  }
-
-  nav ul a:hover { color: var(--white); }
-
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 120px 60px 80px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero-content { max-width: 700px; }
-
-  .hero-tag {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--cyan);
-    letter-spacing: 0.15em;
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .hero-tag::before {
-    content: '';
-    width: 32px;
-    height: 1px;
-    background: var(--cyan);
-  }
-
-  h1 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(3rem, 7vw, 5.5rem);
-    font-weight: 800;
-    line-height: 1.0;
-    letter-spacing: -2px;
-    margin-bottom: 24px;
-  }
-
-  h1 .highlight {
-    color: var(--blue);
-    -webkit-text-stroke: 0;
-  }
-
-  .hero-desc {
-    font-size: 1.05rem;
-    color: var(--gray);
-    line-height: 1.7;
-    max-width: 520px;
-    margin-bottom: 40px;
-  }
-
-  .hero-buttons {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  .btn-primary {
-    background: var(--blue);
-    color: #ffffff;
-    padding: 14px 28px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.82rem;
-    letter-spacing: 0.05em;
-    transition: all 0.2s;
-    border: 1px solid var(--blue);
-  }
-
-  .btn-primary:hover {
-    background: var(--blue-light);
-    border-color: var(--blue-light);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px var(--glow);
-  }
-
-  .btn-outline {
-    background: transparent;
-    color: var(--white);
-    padding: 14px 28px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.82rem;
-    letter-spacing: 0.05em;
-    border: 1px solid var(--border);
-    transition: all 0.2s;
-  }
-
-  .btn-outline:hover {
-    border-color: var(--blue-light);
-    color: var(--blue-light);
-    transform: translateY(-2px);
-  }
-
-  /* Floating orbs */
-  .orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    pointer-events: none;
-  }
-
-  .orb-1 {
-    width: 400px; height: 400px;
-    background: rgba(26,86,219,0.12);
-    top: 10%; right: 5%;
-    animation: float 8s ease-in-out infinite;
-  }
-
-  .orb-2 {
-    width: 250px; height: 250px;
-    background: rgba(6,182,212,0.08);
-    bottom: 20%; right: 20%;
-    animation: float 6s ease-in-out infinite reverse;
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-30px); }
-  }
-
-  /* SECTIONS */
-  section {
-    padding: 100px 60px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .section-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--cyan);
-    letter-spacing: 0.2em;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .section-label::before {
-    content: '';
-    width: 24px;
-    height: 1px;
-    background: var(--cyan);
-  }
-
-  .section-title {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 700;
-    letter-spacing: -1px;
-    margin-bottom: 60px;
-  }
-
-  /* SKILLS */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-  }
-
-  .skill-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 28px;
-    transition: all 0.3s;
-  }
-
-  .skill-card:hover {
-    border-color: rgba(59,130,246,0.4);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(74,124,89,0.12);
-  }
-
-  .skill-category {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--cyan);
-    letter-spacing: 0.1em;
-    margin-bottom: 14px;
-  }
-
-  .skill-card h3 {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 16px;
-  }
-
-  .skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .tag {
-    background: rgba(74,124,89,0.1);
-    border: 1px solid rgba(74,124,89,0.25);
-    color: #3a6347;
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.03em;
-  }
-
-  /* PROJECTS */
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 24px;
-  }
-
-  .project-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 32px;
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .project-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--blue), var(--cyan));
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .project-card:hover::before { opacity: 1; }
-
-  .project-card:hover {
-    border-color: rgba(59,130,246,0.35);
-    transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(74,124,89,0.15);
-  }
-
-  .project-type {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.68rem;
-    color: var(--cyan);
-    letter-spacing: 0.15em;
-    margin-bottom: 14px;
-  }
-
-  .project-card h3 {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-    letter-spacing: -0.3px;
-  }
-
-  .project-card p {
-    color: var(--gray);
-    font-size: 0.9rem;
-    line-height: 1.65;
-    margin-bottom: 20px;
-  }
-
-  .project-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 24px;
-  }
-
-  .stack-tag {
-    background: rgba(138,154,91,0.12);
-    border: 1px solid rgba(138,154,91,0.25);
-    color: #5c6638;
-    padding: 3px 9px;
-    border-radius: 4px;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.68rem;
-  }
-
-  .project-link {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--blue-light);
-    text-decoration: none;
-    letter-spacing: 0.05em;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: gap 0.2s;
-  }
-
-  .project-link:hover { gap: 10px; }
-
-  /* EXPERIENCE */
-  .experience-list { display: flex; flex-direction: column; gap: 24px; }
-
-  .exp-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 28px 32px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 16px;
-    transition: border-color 0.3s;
-  }
-
-  .exp-card:hover { border-color: rgba(59,130,246,0.35); }
-
-  .exp-role {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 4px;
-  }
-
-  .exp-company {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--cyan);
-    margin-bottom: 12px;
-  }
-
-  .exp-desc {
-    color: var(--gray);
-    font-size: 0.88rem;
-    line-height: 1.65;
-  }
-
-  .exp-date {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--gray);
-    white-space: nowrap;
-    text-align: right;
-  }
-
-  /* EDUCATION */
-  .edu-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 32px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 24px;
-  }
-
-  .edu-degree {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 6px;
-  }
-
-  .edu-school {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.8rem;
-    color: var(--cyan);
-    margin-bottom: 12px;
-  }
-
-  .edu-details {
-    color: var(--gray);
-    font-size: 0.88rem;
-    line-height: 1.7;
-  }
-
-  .edu-meta {
-    text-align: right;
-    flex-shrink: 0;
-  }
-
-  .gpa-badge {
-    background: rgba(74,124,89,0.15);
-    border: 1px solid rgba(74,124,89,0.3);
-    color: var(--blue);
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-bottom: 8px;
-    display: block;
-    text-align: center;
-  }
-
-  .dean-badge {
-    background: rgba(138,154,91,0.15);
-    border: 1px solid rgba(138,154,91,0.3);
-    color: #6b7a3a;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    text-align: center;
-    display: block;
-  }
-
-  /* CONTACT */
-  .contact-section {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 60px;
-    text-align: center;
-  }
-
-  .contact-section h2 {
-    font-family: 'Syne', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 800;
-    letter-spacing: -1px;
-    margin-bottom: 16px;
-  }
-
-  .contact-section p {
-    color: var(--gray);
-    font-size: 1rem;
-    margin-bottom: 40px;
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.7;
-  }
-
-  .contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  /* FOOTER */
-  footer {
-    padding: 32px 60px;
-    border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-  }
-
-  footer p {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--gray);
-  }
-
-  /* ANIMATIONS */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(24px);
-    animation: fadeIn 0.7s ease forwards;
-  }
-
-  @keyframes fadeIn {
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .fade-in:nth-child(1) { animation-delay: 0.1s; }
-  .fade-in:nth-child(2) { animation-delay: 0.2s; }
-  .fade-in:nth-child(3) { animation-delay: 0.3s; }
-  .fade-in:nth-child(4) { animation-delay: 0.4s; }
-
-  /* DIVIDER */
-  .divider {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--border), transparent);
-    margin: 0 60px;
-  }
-
-  /* Cursor dot */
-  .cursor { display: none; }
-
-  @media (max-width: 768px) {
-    nav { padding: 16px 24px; }
-    nav ul { gap: 20px; }
-    .hero { padding: 100px 24px 60px; }
-    section { padding: 70px 24px; }
-    .divider { margin: 0 24px; }
-    footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
-    .edu-card { flex-direction: column; }
-    .edu-meta { text-align: left; }
-    .contact-section { padding: 40px 24px; }
-  }
-</style>
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-mark">KK.</div>
+</div>
+
+<div class="mesh-bg" aria-hidden="true"></div>
+<div class="grid-overlay" aria-hidden="true"></div>
+<div class="scroll-progress" id="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
 <!-- NAV -->
-<nav>
-  <div class="nav-logo">KK<span>.</span></div>
-  <ul>
+<nav class="site-nav" aria-label="Primary">
+  <a href="#" class="nav-logo" aria-label="KK. — Karanpreet Kaur, back to top">KK<span class="dot">.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#timeline">Timeline</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#education">Education</a></li>
+    <li><a href="#resume">Resume</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <div class="nav-actions">
+    <button class="icon-btn" id="cmdk-trigger" aria-label="Open command palette (Ctrl+K)" title="Search (Ctrl+K)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+    </button>
+    <button class="icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark and light theme">
+      <span class="moon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg></span>
+      <span class="sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
+    </button>
+    <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-  <div class="hero-content">
-    <div class="hero-tag fade-in">BCIS STUDENT · UFV · ABBOTSFORD BC</div>
-    <h1 class="fade-in">
-      Karanpreet<br>
-      <span class="highlight">Kaur</span><span class="cursor"></span>
-    </h1>
-    <p class="hero-desc fade-in">
-      Computer Information Systems student at UFV building web applications, databases, and backend systems. I enjoy turning ideas into working software — from front-end interfaces to database design to server-side logic. Currently seeking work experience opportunities in web development, IT support, or data roles.
-    </p>
-    <div class="hero-buttons fade-in">
-      <a href="#projects" class="btn-primary">View Projects →</a>
-      <a href="https://github.com/karanpreet-kaur11" target="_blank" class="btn-outline">GitHub Profile</a>
-      <a href="#contact" class="btn-outline">Contact Me</a>
-    </div>
-  </div>
-</section>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#timeline">Timeline</a>
+  <a href="#experience">Experience</a>
+  <a href="#education">Education</a>
+  <a href="#resume">Resume</a>
+  <a href="#contact">Contact</a>
+</div>
 
-<div class="divider"></div>
+<main id="main-content">
 
-<!-- SKILLS -->
-<section id="skills">
-  <div class="section-label">WHAT I WORK WITH</div>
-  <h2 class="section-title">Technical Skills</h2>
-  <div class="skills-grid">
-    <div class="skill-card">
-      <div class="skill-category">FRONTEND & WEB</div>
-      <h3>Web Development</h3>
-      <div class="skill-tags">
-        <span class="tag">HTML</span>
-        <span class="tag">CSS</span>
-        <span class="tag">JavaScript</span>
-        <span class="tag">jQuery</span>
-        <span class="tag">Bootstrap</span>
-        <span class="tag">PHP</span>
-        <span class="tag">Thymeleaf</span>
-        <span class="tag">HTMX</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-category">BACKEND DEVELOPMENT</div>
-      <h3>Server-Side & APIs</h3>
-      <div class="skill-tags">
-        <span class="tag">Java</span>
-        <span class="tag">Spring Boot</span>
-        <span class="tag">Spring Security</span>
-        <span class="tag">JPA/Hibernate</span>
-        <span class="tag">REST APIs</span>
-        <span class="tag">BCrypt</span>
-        <span class="tag">Session Management</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-category">DATA & DATABASES</div>
-      <h3>Database Design</h3>
-      <div class="skill-tags">
-        <span class="tag">SQL</span>
-        <span class="tag">MySQL</span>
-        <span class="tag">Database Design</span>
-        <span class="tag">ER Modeling</span>
-        <span class="tag">Normalization</span>
-        <span class="tag">JPQL</span>
-        <span class="tag">Microsoft Excel</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-category">IT & SUPPORT</div>
-      <h3>IT Skills</h3>
-      <div class="skill-tags">
-        <span class="tag">Windows OS</span>
-        <span class="tag">Linux (basic)</span>
-        <span class="tag">Troubleshooting</span>
-        <span class="tag">End-User Support</span>
-        <span class="tag">Documentation</span>
-        <span class="tag">Networking basics</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-category">SECURITY</div>
-      <h3>Security Fundamentals</h3>
-      <div class="skill-tags">
-        <span class="tag">Information Security</span>
-        <span class="tag">Social Engineering</span>
-        <span class="tag">Phishing Awareness</span>
-        <span class="tag">Secure Auth</span>
-        <span class="tag">OS Security</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-category">TOOLS & PRACTICES</div>
-      <h3>Development Tools</h3>
-      <div class="skill-tags">
-        <span class="tag">Git/GitHub</span>
-        <span class="tag">IntelliJ IDEA</span>
-        <span class="tag">VS Code</span>
-        <span class="tag">Processing</span>
-        <span class="tag">Microsoft 365</span>
-        <span class="tag">Docker (basics)</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="section-label">WHAT I'VE BUILT</div>
-  <h2 class="section-title">Projects</h2>
-  <div class="projects-grid">
-
-    <div class="project-card">
-      <div class="project-type">CLOUD & VIRTUALIZATION · COURSEWORK</div>
-      <h3>WordPress Service Stack</h3>
-      <p>Course project (CIS 395) where I deployed a WordPress stack using Docker containers and MariaDB. Set up Nginx as a web server, wrote basic Bash scripts for backups, and documented the full architecture and setup process. Learned containerization fundamentals through hands-on deployment.</p>
-      <div class="project-stack">
-        <span class="stack-tag">Docker</span>
-        <span class="stack-tag">Nginx</span>
-        <span class="stack-tag">MariaDB</span>
-        <span class="stack-tag">Bash</span>
-        <span class="stack-tag">Linux</span>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-type">FULL STACK · JAVA · SPRING BOOT</div>
-      <h3>Campus Store Management System</h3>
-      <p>Full e-commerce web application with admin and customer roles. Features include product catalog with filtering/sorting/pagination, order management with stock deduction, user authentication with BCrypt encryption, and role-based access control. Built with Spring Boot, Thymeleaf, and MySQL.</p>
-      <div class="project-stack">
-        <span class="stack-tag">Java</span>
-        <span class="stack-tag">Spring Boot</span>
-        <span class="stack-tag">Spring Security</span>
-        <span class="stack-tag">Thymeleaf</span>
-        <span class="stack-tag">MySQL</span>
-        <span class="stack-tag">JPA</span>
-      </div>
-      <a href="https://github.com/karanpreet-kaur11/project" target="_blank" class="project-link">View on GitHub →</a>
-    </div>
-
-    <div class="project-card">
-      <div class="project-type">FULL STACK · HTMX · SPRING BOOT</div>
-      <h3>Study Tracker App</h3>
-      <p>Academic task management application with dynamic partial page updates using HTMX. Features CRUD operations, enforced status transitions (PENDING → IN_PROGRESS → COMPLETED), a KPI dashboard with task counts, and course-based task grouping. Zero full page reloads.</p>
-      <div class="project-stack">
-        <span class="stack-tag">Java</span>
-        <span class="stack-tag">Spring Boot</span>
-        <span class="stack-tag">HTMX</span>
-        <span class="stack-tag">Thymeleaf</span>
-        <span class="stack-tag">MySQL</span>
-        <span class="stack-tag">Bootstrap</span>
-      </div>
-      <a href="https://github.com/karanpreet-kaur11/finalexamcomp351" target="_blank" class="project-link">View on GitHub →</a>
-    </div>
-
-    <div class="project-card">
-      <div class="project-type">OOP · GAME DEVELOPMENT · SECURITY</div>
-      <h3>Cybersecurity Defense Game</h3>
-      <p>Interactive cybersecurity-themed game where players defend a server by scanning and destroying malicious network packets. Built with 3-level class inheritance, FSM with 4 states, and two distinct UI versions tested with 15 participants. Compared data-driven vs simplified visual interfaces.</p>
-      <div class="project-stack">
-        <span class="stack-tag">Java</span>
-        <span class="stack-tag">Processing</span>
-        <span class="stack-tag">OOP</span>
-        <span class="stack-tag">FSM</span>
-        <span class="stack-tag">UI/UX Research</span>
-      </div>
-      <a href="https://github.com/karanpreet-kaur11/COMP350GroupProjectVersion1" target="_blank" class="project-link">View on GitHub →</a>
-    </div>
-
-    <div class="project-card">
-      <div class="project-type">FULL STACK · PHP · WEB APP</div>
-      <h3>UrbanBite Restaurant Platform</h3>
-      <p>Full-stack restaurant ordering and management platform with customer and admin interfaces. Implemented forms, modal dialogs, JavaScript validation, and documented application workflows throughout development. Delivered formal presentation explaining problem, solution, and business value.</p>
-      <div class="project-stack">
-        <span class="stack-tag">HTML</span>
-        <span class="stack-tag">CSS</span>
-        <span class="stack-tag">JavaScript</span>
-        <span class="stack-tag">PHP</span>
-        <span class="stack-tag">jQuery</span>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-type">DATABASE DESIGN · SQL</div>
-      <h3>Hospital Management Database</h3>
-      <p>Designed a relational database system to manage patient records, appointments, and billing. Applied normalization techniques (1NF–3NF), data integrity constraints, and wrote SQL queries for data retrieval and operational reporting. Built ER diagrams and documented the full schema.</p>
-      <div class="project-stack">
-        <span class="stack-tag">SQL</span>
-        <span class="stack-tag">MySQL</span>
-        <span class="stack-tag">ER Modeling</span>
-        <span class="stack-tag">Normalization</span>
-        <span class="stack-tag">Database Design</span>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-type">REST API · SPRING BOOT</div>
-      <h3>Task REST API</h3>
-      <p>A Task REST API built with Spring Boot demonstrating RESTful endpoint design, HTTP methods (GET, POST, PUT, DELETE), and JSON response handling with clean controller and service layers.</p>
-      <div class="project-stack">
-        <span class="stack-tag">Java</span>
-        <span class="stack-tag">Spring Boot</span>
-        <span class="stack-tag">REST API</span>
-        <span class="stack-tag">JSON</span>
-      </div>
-      <a href="https://github.com/karanpreet-kaur11/task-api" target="_blank" class="project-link">View on GitHub →</a>
-    </div>
-
-    <div class="project-card">
-      <div class="project-type">JPA · HIBERNATE · DATABASES</div>
-      <h3>Multi-Table JPA Application</h3>
-      <p>A multi-table database application using JPA, Hibernate, and JPQL — demonstrating entity relationships, mapping between related tables, and writing queries across them.</p>
-      <div class="project-stack">
-        <span class="stack-tag">Java</span>
-        <span class="stack-tag">JPA</span>
-        <span class="stack-tag">Hibernate</span>
-        <span class="stack-tag">JPQL</span>
-        <span class="stack-tag">MySQL</span>
-      </div>
-      <a href="https://github.com/karanpreet-kaur11/Multi-Table_Application" target="_blank" class="project-link">View on GitHub →</a>
-    </div>
-
-    <div class="project-card">
-      <div class="project-type">SECURITY · SPRING BOOT</div>
-      <h3>Security & Session Demo</h3>
-      <p>A Spring Boot application demonstrating secure user authentication and session management — exploring how login security, sessions, and protected routes work in a web application.</p>
-      <div class="project-stack">
-        <span class="stack-tag">Java</span>
-        <span class="stack-tag">Spring Boot</span>
-        <span class="stack-tag">Spring Security</span>
-        <span class="stack-tag">Sessions</span>
-      </div>
-      <a href="https://github.com/karanpreet-kaur11/Securitysessiondemo.food" target="_blank" class="project-link">View on GitHub →</a>
-    </div>
-
-    <div class="project-card">
-      <div class="project-type">FRONTEND · UI</div>
-      <h3>Secure Task UI</h3>
-      <p>A front-end interface project for a task management system, focused on building clean, user-friendly UI to interact with task data.</p>
-      <div class="project-stack">
-        <span class="stack-tag">HTML</span>
-        <span class="stack-tag">CSS</span>
-        <span class="stack-tag">JavaScript</span>
-        <span class="stack-tag">UI Design</span>
-      </div>
-      <a href="https://github.com/karanpreet-kaur11/secure-task-ui" target="_blank" class="project-link">View on GitHub →</a>
-    </div>
-
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="section-label">WHERE I'VE WORKED</div>
-  <h2 class="section-title">Experience</h2>
-  <div class="experience-list">
-    <div class="exp-card">
-      <div>
-        <div class="exp-role">Grocery Clerk / Cashier (Shift Lead)</div>
-        <div class="exp-company">SABZI MANDI SUPERMARKET · Abbotsford, BC</div>
-        <div class="exp-desc">
-          Supported daily operations using POS and digital inventory management systems. Troubleshot system and transaction issues, trained and onboarded 3–4 employees on system use, and maintained accurate data records across daily operations.
+  <!-- HERO -->
+  <section class="hero" aria-label="Introduction">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-tag reveal in-view" id="hero-tag"></div>
+        <h1 class="reveal in-view" id="hero-name"></h1>
+        <div class="hero-role reveal in-view"><span id="hero-role-text"></span><span class="type-caret" aria-hidden="true"></span></div>
+        <p class="hero-desc reveal in-view" id="hero-desc"></p>
+        <div class="hero-buttons reveal in-view">
+          <a href="#projects" class="btn btn-primary">View Projects →</a>
+          <a href="#resume" class="btn btn-outline">Download Resume</a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+        <div class="hero-meta reveal in-view">
+          <span class="hero-meta-item" id="hero-meta-location"></span>
+          <span class="hero-meta-item" id="hero-meta-edu"></span>
+        </div>
+        <div class="hero-socials reveal in-view">
+          <a href="#" target="_blank" rel="noopener" class="icon-btn" id="hero-github" aria-label="GitHub profile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener" class="icon-btn" id="hero-linkedin" aria-label="LinkedIn profile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A6 6 0 0 1 16 8Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="icon-btn" id="hero-email" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+          </a>
         </div>
       </div>
-      <div class="exp-date">May 2023<br>— Present</div>
-    </div>
-    <div class="exp-card">
-      <div>
-        <div class="exp-role">Cashier</div>
-        <div class="exp-company">DALJEET MEDICAL HALL (PHARMACY) · India</div>
-        <div class="exp-desc">
-          Operated computerized billing and inventory systems in a regulated pharmacy environment. Maintained accurate digital transaction and inventory records.
+      <div class="hero-visual" aria-hidden="true">
+        <div class="avatar-ring">
+          <div class="avatar-core">
+            <span class="avatar-initials" id="avatar-initials"></span>
+          </div>
+          <span class="avatar-orbit-dot orbit-1"></span>
+          <span class="avatar-orbit-dot orbit-2"></span>
         </div>
       </div>
-      <div class="exp-date">Nov 2020<br>— Jun 2022</div>
     </div>
-  </div>
-</section>
+    <div class="scroll-cue" aria-hidden="true"><span>SCROLL</span><span class="wheel"></span></div>
+  </section>
 
-<div class="divider"></div>
+  <div class="divider"></div>
 
-<!-- EDUCATION -->
-<section id="education">
-  <div class="section-label">WHERE I STUDY</div>
-  <h2 class="section-title">Education</h2>
-  <div class="edu-card">
-    <div>
-      <div class="edu-degree">Bachelor of Computer Information Systems</div>
-      <div class="edu-school">UNIVERSITY OF THE FRASER VALLEY · Abbotsford, BC · Co-op Program</div>
-      <div class="edu-details">
-        <strong>Relevant Courses:</strong> Operating Systems · Networking · Databases · Advanced Web Programming · Information Systems Security · Virtualization & Cloud Infrastructure · Project Management · UI Design · End User Training & Support · Public Speaking
-        <br><br>
-        <strong>Achievement:</strong> Dean's List — Winter 2025
+  <!-- ABOUT -->
+  <section class="section" id="about" aria-labelledby="about-title">
+    <div class="section-inner">
+      <div class="section-label">WHO I AM</div>
+      <h2 class="section-title" id="about-title">About Me</h2>
+
+      <div class="stats-strip reveal" id="stats-strip"></div>
+
+      <div class="about-grid">
+        <div>
+          <div class="about-bio" id="about-bio"></div>
+          <h3 style="font-family: var(--font-display); font-size: 1.1rem; margin: 32px 0 4px;">What I value</h3>
+          <div class="value-list" id="about-values"></div>
+        </div>
+        <div>
+          <div class="about-card">
+            <h3>Strengths</h3>
+            <div class="chip-row" id="about-strengths"></div>
+          </div>
+          <div class="about-card">
+            <h3>Languages</h3>
+            <div id="about-languages"></div>
+          </div>
+          <div class="about-card">
+            <h3>Currently exploring</h3>
+            <div class="chip-row" id="about-interests"></div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="edu-meta">
-      <span class="gpa-badge">GPA 3.40</span>
-      <span class="dean-badge">🏆 Dean's List</span>
-      <br>
-      <span style="font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--gray);">2023 — 2027</span>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills" aria-labelledby="skills-title">
+    <div class="section-inner">
+      <div class="section-label">WHAT I WORK WITH</div>
+      <h2 class="section-title" id="skills-title">Technical Skills</h2>
+      <p class="section-desc">A working toolkit built through coursework and self-directed projects — from database design to full-stack web apps.</p>
+      <div class="skills-grid" id="skills-grid"></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="divider"></div>
+  <div class="divider"></div>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="contact-section">
-    <div class="section-label" style="justify-content: center;">GET IN TOUCH</div>
-    <h2>Let's Work Together</h2>
-    <p>I'm a BCIS student at UFV actively looking for work experience in web development, IT support, or data roles. Based in Abbotsford, BC — open to on-site, hybrid, or remote opportunities.</p>
-    <div class="contact-links">
-      <a href="mailto:karanpreet13kaur@gmail.com" class="btn-primary">Email Me →</a>
-      <a href="https://linkedin.com/in/karanpreet13kaur" target="_blank" class="btn-outline">LinkedIn</a>
-      <a href="https://github.com/karanpreet-kaur11" target="_blank" class="btn-outline">GitHub</a>
+  <!-- PROJECTS -->
+  <section class="section" id="projects" aria-labelledby="projects-title">
+    <div class="section-inner">
+      <div class="section-label">WHAT I'VE BUILT</div>
+      <h2 class="section-title" id="projects-title">Projects</h2>
+      <p class="section-desc">Each card opens into the problem it solved, the architecture behind it, and what I learned building it.</p>
+      <div class="project-filters" id="project-filters"></div>
+      <div class="projects-grid" id="projects-grid"></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
+  <div class="divider"></div>
+
+  <!-- GITHUB STATS -->
+  <section class="section" id="github-stats" aria-labelledby="github-stats-title">
+    <div class="section-inner">
+      <div class="section-label">LIVE FROM GITHUB</div>
+      <h2 class="section-title" id="github-stats-title">GitHub Activity</h2>
+      <p class="section-desc">Live stats pulled directly from my GitHub profile.</p>
+      <div class="github-stats-grid" id="github-stats-grid"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- TIMELINE -->
+  <section class="section" id="timeline" aria-labelledby="timeline-title">
+    <div class="section-inner">
+      <div class="section-label">HOW I GOT HERE</div>
+      <h2 class="section-title" id="timeline-title">Journey</h2>
+      <div class="timeline" id="timeline"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience" aria-labelledby="experience-title">
+    <div class="section-inner">
+      <div class="section-label">WHERE I'VE WORKED</div>
+      <h2 class="section-title" id="experience-title">Experience</h2>
+      <div class="experience-list" id="experience-list"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- EDUCATION -->
+  <section class="section" id="education" aria-labelledby="education-title">
+    <div class="section-inner">
+      <div class="section-label">WHERE I STUDY</div>
+      <h2 class="section-title" id="education-title">Education</h2>
+      <div class="education-list" id="education-list"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ACHIEVEMENTS -->
+  <section class="section" id="achievements-section" aria-labelledby="achievements-title">
+    <div class="section-inner">
+      <div class="section-label">RECOGNITION</div>
+      <h2 class="section-title" id="achievements-title">Achievements</h2>
+      <div class="achievements-grid" id="achievements-grid"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CERTIFICATIONS (removed automatically if empty) -->
+  <section class="section" id="certifications-section" aria-labelledby="certifications-title">
+    <div class="section-inner">
+      <div class="section-label">VERIFIED LEARNING</div>
+      <h2 class="section-title" id="certifications-title">Certifications</h2>
+      <div class="certs-grid" id="certs-grid"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- RESUME -->
+  <section class="section" id="resume" aria-labelledby="resume-title">
+    <div class="section-inner">
+      <div class="section-label">ONE-PAGE SUMMARY</div>
+      <h2 class="section-title" id="resume-title">Resume</h2>
+      <div class="resume-panel">
+        <div class="resume-frame-wrap" id="resume-frame-wrap"></div>
+        <p class="resume-fallback" id="resume-fallback"></p>
+        <div class="resume-actions">
+          <a href="assets/resume.pdf" download class="btn btn-primary" id="resume-download-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></svg>
+            Download Resume
+          </a>
+          <button type="button" class="btn btn-outline" onclick="window.print()">Print This Page</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FAQ -->
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="section-inner">
+      <div class="section-label">GOOD TO KNOW</div>
+      <h2 class="section-title" id="faq-title">Frequently Asked</h2>
+      <div class="faq-list" id="faq-list"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact" aria-labelledby="contact-title">
+    <div class="section-inner">
+      <div class="section-label">GET IN TOUCH</div>
+      <h2 class="section-title" id="contact-title">Let's Work Together</h2>
+      <p class="section-desc">I'm actively looking for work experience in web development, IT support, or data roles. Based in Abbotsford, BC — open to on-site, hybrid, or remote opportunities.</p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Send a message</h3>
+          <p>This opens your email client with the message pre-filled — nothing is stored or sent through a third party.</p>
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Your Email</label>
+              <input type="email" id="cf-email" name="email" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message →</button>
+          </form>
+        </div>
+        <div class="contact-card">
+          <h3>Direct links</h3>
+          <p>Prefer a quicker route? Reach me directly.</p>
+          <div class="contact-links-list" id="contact-links"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
 <footer>
-  <p>© 2026 Karanpreet Kaur · Built with HTML/CSS/JS</p>
-  <p>Abbotsford, BC · Open to opportunities</p>
+  <p id="footer-text"></p>
+  <div class="footer-links">
+    <a href="#main-content">Back to top</a>
+    <a href="sitemap.xml">Sitemap</a>
+  </div>
 </footer>
 
-<script>
-  // Smooth scroll for nav links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-    });
-  });
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
 
-  // Intersection observer for scroll animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.1 });
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  document.querySelectorAll('.skill-card, .project-card, .exp-card, .edu-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-  });
-</script>
+<!-- Project detail modal -->
+<div class="modal-overlay" id="project-modal" aria-hidden="true" inert role="dialog" aria-modal="true" aria-label="Project details">
+  <div class="modal-panel" id="project-modal-panel" tabindex="-1"></div>
+</div>
+
+<!-- Command palette -->
+<div class="cmdk-overlay" id="cmdk-overlay" aria-hidden="true" inert role="dialog" aria-modal="true" aria-label="Command palette">
+  <div class="cmdk-panel">
+    <div class="cmdk-input-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="cmdk-input" placeholder="Jump to a section, project, or action…" aria-label="Command palette search">
+      <kbd>ESC</kbd>
+    </div>
+    <div class="cmdk-results" id="cmdk-results"></div>
+  </div>
+</div>
+
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>
