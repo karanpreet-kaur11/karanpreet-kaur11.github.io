@@ -7,21 +7,22 @@
       "AI & Business Systems Enthusiast",
       "Future Software Engineer"
     ],
-    "tagline": "Computer Information Systems student at UFV building web applications, databases, and backend systems. I enjoy turning ideas into working software — from front-end interfaces to database design to server-side logic. Currently seeking work experience opportunities in web development, IT support, or data roles.",
+    "tagline": "Computer Information Systems student with hands-on experience building and deploying full-stack web applications using Java, Spring Boot, React, Node.js, and SQL. I enjoy turning ideas into working software — from front-end interfaces to database design to server-side logic and secure authentication. Currently seeking work experience opportunities in web development, IT support, or data roles.",
     "location": "Abbotsford, BC, Canada",
     "availability": "Open to Work",
     "educationShort": "BCIS @ University of the Fraser Valley",
     "email": "karanpreet13kaur@gmail.com",
+    "phone": "778-903-6604",
     "github": "https://github.com/karanpreet-kaur11",
     "linkedin": "https://linkedin.com/in/karanpreet13kaur",
     "resumePath": "assets/resume.pdf"
   },
 
   "stats": [
-    { "value": 10, "suffix": "+", "label": "Projects Built" },
-    { "value": 15, "suffix": "+", "label": "Technologies Learned" },
+    { "value": 11, "suffix": "+", "label": "Projects Built" },
+    { "value": 20, "suffix": "+", "label": "Technologies Learned" },
     { "value": 3, "suffix": "", "label": "Years Learning CS" },
-    { "value": 3.4, "suffix": "", "label": "GPA / 4.33" }
+    { "value": 3.34, "suffix": "", "label": "GPA / 4.33" }
   ],
 
   "values": [
@@ -37,7 +38,8 @@
     "Database & schema design",
     "Fast learner on new stacks",
     "Clear technical documentation",
-    "Team collaboration"
+    "Team collaboration",
+    "Explaining technical concepts to non-technical users"
   ],
 
   "languages": [
@@ -61,8 +63,10 @@
       "items": [
         { "name": "HTML", "level": 90 },
         { "name": "CSS", "level": 88 },
-        { "name": "JavaScript", "level": 80 },
-        { "name": "jQuery", "level": 75 },
+        { "name": "JavaScript", "level": 82 },
+        { "name": "TypeScript", "level": 72 },
+        { "name": "React", "level": 74 },
+        { "name": "Tailwind CSS", "level": 72 },
         { "name": "Bootstrap", "level": 80 },
         { "name": "HTMX", "level": 78 },
         { "name": "PHP", "level": 65 },
@@ -76,9 +80,23 @@
         { "name": "Java", "level": 85 },
         { "name": "Spring Boot", "level": 82 },
         { "name": "Spring Security", "level": 72 },
+        { "name": "Node.js", "level": 70 },
+        { "name": "Express", "level": 68 },
         { "name": "JPA / Hibernate", "level": 75 },
         { "name": "REST APIs", "level": 80 },
         { "name": "Session Management", "level": 70 }
+      ]
+    },
+    {
+      "category": "Core Languages",
+      "icon": "hash",
+      "items": [
+        { "name": "Java", "level": 85 },
+        { "name": "Python", "level": 65 },
+        { "name": "C", "level": 62 },
+        { "name": "C++", "level": 62 },
+        { "name": "JavaScript / TypeScript", "level": 78 },
+        { "name": "SQL", "level": 85 }
       ]
     },
     {
@@ -87,6 +105,7 @@
       "items": [
         { "name": "SQL", "level": 85 },
         { "name": "MySQL", "level": 83 },
+        { "name": "SQLite", "level": 74 },
         { "name": "Database Design", "level": 82 },
         { "name": "ER Modeling", "level": 80 },
         { "name": "Normalization", "level": 78 },
@@ -131,6 +150,28 @@
 
   "projects": [
     {
+      "id": "inventory-expiry",
+      "title": "Inventory Expiry Management System",
+      "category": "Full Stack · React · Node.js",
+      "tags": ["React", "TypeScript", "Node.js", "Express", "SQLite"],
+      "summary": "A full-stack app that tracks product expiry dates for businesses, with a dashboard, calendar, charts, and reports — deployed live.",
+      "problem": "Small businesses lose money on stock that expires unnoticed. Tracking expiry dates in spreadsheets doesn't scale and gives no early warning before it's too late to act.",
+      "features": [
+        "Dashboard with at-a-glance expiry status across inventory",
+        "Calendar view and charts visualizing upcoming expiry dates",
+        "Exportable reports for stock review",
+        "Secure multi-user login with per-user data isolation"
+      ],
+      "architecture": "A React + TypeScript front end talking to a Node.js/Express REST API, backed by SQLite. Queries are parameterized end-to-end to keep them injection-safe, and each user's data is scoped server-side rather than filtered only in the UI. The front end is deployed on Vercel and the API on Render.",
+      "challenges": "Designing per-user data isolation correctly at the API layer (not just the UI), and structuring the calendar/chart views so expiry risk is obvious at a glance rather than buried in a table.",
+      "lessons": "This project was built with AI-assisted development as part of the workflow — planning the schema and API with an LLM, then implementing and verifying it directly, which sharpened how I scope prompts and validate generated code rather than accepting it blindly.",
+      "impact": "My most complete end-to-end project so far: designed, built, secured, and actually deployed to production rather than left running only locally.",
+      "status": "Live",
+      "lastUpdated": "2026",
+      "github": null,
+      "demo": null
+    },
+    {
       "id": "campus-store",
       "title": "Campus Store Management System",
       "category": "Full Stack · Java · Spring Boot",
@@ -148,7 +189,7 @@
       "lessons": "Learned to separate authorization checks at the controller layer instead of trusting the UI to hide restricted actions, and how BCrypt salting protects stored credentials.",
       "impact": "Coursework project demonstrating a production-style e-commerce flow end-to-end, from schema design to checkout logic.",
       "status": "Complete",
-      "lastUpdated": "2025",
+      "lastUpdated": "2026",
       "github": "https://github.com/karanpreet-kaur11/project",
       "demo": null
     },
@@ -170,7 +211,7 @@
       "lessons": "Got hands-on with the HTMX request/response cycle and why partial server rendering can remove the need for a heavier JS framework on simpler CRUD apps.",
       "impact": "Demonstrates a modern server-driven UI pattern as an alternative to SPA frameworks for straightforward CRUD tools.",
       "status": "Complete",
-      "lastUpdated": "2025",
+      "lastUpdated": "2026",
       "github": "https://github.com/karanpreet-kaur11/finalexamcomp351",
       "demo": null
     },
@@ -192,7 +233,7 @@
       "lessons": "Direct experience running a small UI/UX study — recruiting participants, structuring tasks, and translating qualitative feedback into concrete interface decisions.",
       "impact": "Combined OOP architecture with real user-testing methodology in a single project.",
       "status": "Complete",
-      "lastUpdated": "2024",
+      "lastUpdated": "2026",
       "github": "https://github.com/karanpreet-kaur11/COMP350GroupProjectVersion1",
       "demo": null
     },
@@ -214,7 +255,7 @@
       "lessons": "Practiced presenting technical work to a non-technical audience — explaining the problem, solution, and business value in a formal presentation.",
       "impact": "Delivered as a complete platform with a formal stakeholder-style presentation, not just working code.",
       "status": "Complete",
-      "lastUpdated": "2024",
+      "lastUpdated": "2025",
       "github": null,
       "demo": null
     },
@@ -350,16 +391,16 @@
 
   "experience": [
     {
-      "role": "Grocery Clerk / Cashier (Shift Lead)",
+      "role": "Shift Lead / Cashier",
       "company": "Sabzi Mandi Supermarket",
       "location": "Abbotsford, BC",
       "start": "May 2023",
       "end": "Present",
-      "description": "Supported daily operations using POS and digital inventory management systems.",
+      "description": "Supported daily operations using POS and digital inventory management systems in a fast-paced environment.",
       "highlights": [
-        "Troubleshot system and transaction issues in real time",
-        "Trained and onboarded 3–4 employees on system use",
-        "Maintained accurate data records across daily operations"
+        "Troubleshot POS and digital system issues, supporting both staff and customers",
+        "Trained and onboarded 3–4 new employees, explaining systems and procedures clearly to non-technical users",
+        "Maintained accurate records and data consistency, and handled opening and closing duties independently"
       ],
       "technologies": ["POS Systems", "Inventory Management", "Troubleshooting"]
     },
@@ -386,11 +427,11 @@
       "program": "Co-op Program",
       "start": "2023",
       "end": "2027",
-      "gpa": "3.40",
+      "gpa": "3.34 / 4.33",
       "courses": [
-        "Operating Systems", "Networking", "Databases", "Advanced Web Programming",
-        "Information Systems Security", "Virtualization & Cloud Infrastructure",
-        "Project Management", "UI Design", "End User Training & Support", "Public Speaking"
+        "End User Training & Support", "Operating Systems", "Introduction to Networking",
+        "Networking Theory & Applications", "Databases & Database Management Systems",
+        "Advanced Website Programming", "Information Systems Security"
       ],
       "achievement": "Dean's List — Winter 2025"
     }
@@ -410,13 +451,30 @@
     { "year": "2023", "title": "Started BCIS at UFV", "detail": "Enrolled in the Bachelor of Computer Information Systems co-op program.", "type": "education" },
     { "year": "2023", "title": "Shift Lead role", "detail": "Took on a shift lead position, training staff on POS and inventory systems.", "type": "experience" },
     { "year": "2024", "title": "First full-stack projects", "detail": "Built REST APIs, JPA applications, and security/session demos with Spring Boot.", "type": "project" },
-    { "year": "2024", "title": "Cybersecurity Defense Game", "detail": "Designed and user-tested an interactive game exploring UI/UX and OOP concepts.", "type": "project" },
     { "year": "2025", "title": "Dean's List", "detail": "Recognized for academic achievement in Winter 2025.", "type": "achievement" },
-    { "year": "2025", "title": "Campus Store & Study Tracker", "detail": "Shipped two larger full-stack applications covering e-commerce and HTMX-driven UIs.", "type": "project" },
+    { "year": "2025", "title": "UrbanBite Restaurant Platform", "detail": "Built a full-stack restaurant ordering platform with separate customer and admin views.", "type": "project" },
+    { "year": "2026", "title": "Cybersecurity Defense Game", "detail": "Designed and user-tested an interactive game exploring UI/UX and OOP concepts.", "type": "project" },
+    { "year": "2026", "title": "Campus Store & Study Tracker", "detail": "Shipped two larger full-stack applications covering e-commerce and HTMX-driven UIs.", "type": "project" },
+    { "year": "2026", "title": "Inventory Expiry Management System", "detail": "Designed, built, secured, and deployed a live full-stack app end-to-end with React, Node.js, and SQLite.", "type": "project" },
     { "year": "2027", "title": "Expected graduation", "detail": "On track to graduate from the BCIS co-op program.", "type": "education" }
   ],
 
-  "certifications": [],
+  "certifications": [
+    {
+      "name": "Generative AI, Large Language Models & Responsible AI (Skill Badges)",
+      "provider": "Google Cloud",
+      "date": "2026",
+      "link": null,
+      "description": "A set of Google Cloud Skill Badges covering generative AI fundamentals, large language models, and responsible AI practices."
+    },
+    {
+      "name": "Certificate in C, C++, Python & Java",
+      "provider": "Brilliko Institute of Multimedia",
+      "date": "2022",
+      "link": null,
+      "description": "Foundational programming certificate covering core language fundamentals across C, C++, Python, and Java."
+    }
+  ],
 
   "faqs": [
     {
