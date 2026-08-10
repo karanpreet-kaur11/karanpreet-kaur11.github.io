@@ -166,8 +166,8 @@
       "impact": "My most complete end-to-end project so far: designed, built, secured, and actually deployed to production rather than left running only locally.",
       "status": "Live",
       "lastUpdated": "2026",
-      "github": null,
-      "demo": null,
+      "github": "https://github.com/karanpreet-kaur11/Inventory_Expiry_Management_System",
+      "demo": "https://inventory-expiry-management-system.vercel.app",
       "video": null
     },
     {
@@ -212,7 +212,7 @@
       "impact": "Demonstrates a modern server-driven UI pattern as an alternative to SPA frameworks for straightforward CRUD tools.",
       "status": "Complete",
       "lastUpdated": "2026",
-      "github": "https://github.com/karanpreet-kaur11/finalexamcomp351",
+      "github": "https://github.com/karanpreet-kaur11/finalexamCOMP351",
       "demo": null,
       "video": null
     },
@@ -232,10 +232,10 @@
       "architecture": "Built in Java with the Processing framework; game entities modeled with an inheritance hierarchy, and game flow controlled by an explicit FSM (menu, playing, paused, game-over).",
       "challenges": "Designing a fair comparison between a data-driven UI (raw stats visible) and a simplified visual UI, then interpreting mixed usability feedback from participants.",
       "lessons": "Direct experience running a small UI/UX study — recruiting participants, structuring tasks, and translating qualitative feedback into concrete interface decisions.",
-      "impact": "Combined OOP architecture with real user-testing methodology in a single project.",
+      "impact": "Combined OOP architecture with real user-testing methodology in a single project. Built as a team project — the linked repo is hosted under a teammate's GitHub account.",
       "status": "Complete",
       "lastUpdated": "2026",
-      "github": "https://github.com/karanpreet-kaur11/COMP350GroupProjectVersion1",
+      "github": "https://github.com/EmmaNickel42/COMP350GroupProjectVersion1",
       "demo": null,
       "video": null
     },
