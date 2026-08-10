@@ -482,20 +482,5 @@
       "link": null,
       "description": "Foundational programming certificate covering core language fundamentals across C, C++, Python, and Java."
     }
-  ],
-
-  "faqs": [
-    {
-      "q": "What kind of role are you looking for?",
-      "a": "I'm looking for internship or entry-level opportunities across IT, business systems, and software development — anywhere I can keep building full-stack and database skills on real systems."
-    },
-    {
-      "q": "Are you open to remote or hybrid work?",
-      "a": "Yes — I'm based in Abbotsford, BC and open to on-site, hybrid, or remote opportunities."
-    },
-    {
-      "q": "What's your strongest stack right now?",
-      "a": "Java and Spring Boot on the backend, MySQL for data, and server-rendered front ends (Thymeleaf/HTMX). I'm actively expanding into modern JS tooling and applied AI."
-    }
   ]
 }

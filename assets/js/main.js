@@ -336,50 +336,6 @@
     observeReveal();
   }
 
-  function renderGithubStats(d) {
-    const username = d.profile.github.replace(/\/$/, '').split('/').pop();
-    $('#github-stats-grid').innerHTML = `
-      <div class="gh-stat-card reveal">
-        <img loading="lazy" width="495" height="195" src="https://github-readme-stats.vercel.app/api?username=${encodeURIComponent(username)}&show_icons=true&hide_border=true&bg_color=00000000&title_color=5fd394&icon_color=5fd394&text_color=a6b0aa" alt="${esc(username)}'s GitHub stats" />
-      </div>
-      <div class="gh-stat-card reveal">
-        <img loading="lazy" width="300" height="195" src="https://github-readme-stats.vercel.app/api/top-langs/?username=${encodeURIComponent(username)}&layout=compact&hide_border=true&bg_color=00000000&title_color=5fd394&text_color=a6b0aa" alt="${esc(username)}'s most used languages" />
-      </div>
-      <div class="gh-stat-card reveal" style="grid-column: 1 / -1;">
-        <img loading="lazy" width="800" height="110" src="https://ghchart.rshah.org/5fd394/${encodeURIComponent(username)}" alt="${esc(username)}'s GitHub contribution graph" style="width:100%; height:auto;" />
-      </div>`;
-    observeReveal();
-  }
-
-  function renderFAQ(d) {
-    $('#faq-list').innerHTML = d.faqs.map((f, i) => `
-      <div class="faq-item reveal">
-        <button class="faq-q" aria-expanded="false" aria-controls="faq-a-${i}">
-          <span>${esc(f.q)}</span>${icon('chevronDown', 'chevron')}
-        </button>
-        <div class="faq-a" id="faq-a-${i}"><div class="faq-a-inner">${esc(f.a)}</div></div>
-      </div>`).join('');
-    observeReveal();
-
-    $$('.faq-q').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const item = btn.closest('.faq-item');
-        const answer = $('.faq-a', item);
-        const isOpen = item.classList.contains('open');
-        $$('.faq-item').forEach((i) => {
-          i.classList.remove('open');
-          $('.faq-q', i).setAttribute('aria-expanded', 'false');
-          $('.faq-a', i).style.maxHeight = null;
-        });
-        if (!isOpen) {
-          item.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
-          answer.style.maxHeight = answer.scrollHeight + 'px';
-        }
-      });
-    });
-  }
-
   function renderContact(d) {
     const p = d.profile;
     $('#contact-links').innerHTML = `
@@ -645,8 +601,6 @@
     renderEducation(DATA);
     renderAchievements(DATA);
     renderCertifications(DATA);
-    renderGithubStats(DATA);
-    renderFAQ(DATA);
     renderContact(DATA);
     renderFooter(DATA);
     setupResume(DATA);
