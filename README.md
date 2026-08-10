@@ -20,7 +20,7 @@ site.webmanifest             PWA-ish manifest / icon metadata
 ## Updating content (no code changes needed)
 
 Everything on the page — profile info, stats, skills, projects, experience, education,
-timeline, achievements, certifications, and FAQs — is read from
+timeline, achievements, and certifications — is read from
 [`assets/data/content.json`](assets/data/content.json). Edit that file and refresh the page.
 
 - **Add a project**: append an object to the `projects` array. Each project automatically
@@ -34,18 +34,19 @@ timeline, achievements, certifications, and FAQs — is read from
   array is empty, so it only appears once real credentials are added.
 - **Add a skill category**: append to the `skills` array with an `icon` name from the set
   defined in `assets/js/main.js` (`layout`, `server`, `database`, `cpu`, `cloud`, `tool`).
-- **Update experience/education/timeline/achievements/FAQs**: same pattern — edit the
+- **Update experience/education/timeline/achievements**: same pattern — edit the
   corresponding array.
 
-## Adding your resume
+## Resume
 
 There's no dedicated Resume section — instead, the hero's "Resume ↗" button and a "Resume"
 row in Contact's direct links both check for `assets/resume.pdf` at load time (a `HEAD`
 request). If the file is present, both light up and link to it (view / download); if it's
 missing, the hero button becomes inert and the contact row is simply omitted — no broken
-links, no placeholder. This file is **not** committed to the repo by default, since a resume
-PDF's text (phone number, etc.) is fully public once pushed. Add it locally at
-`assets/resume.pdf` whenever you're ready to publish it.
+links, no placeholder. `assets/resume.pdf` is a **regenerated, phone-number-free version**
+of the original — same content, built with `reportlab` from the original resume's text since
+the original PDF's text layer had the phone number baked in. To replace it, just overwrite
+`assets/resume.pdf` with any PDF.
 
 ## Notes on a few deliberate choices
 
@@ -54,8 +55,6 @@ PDF's text (phone number, etc.) is fully public once pushed. Add it locally at
 - **Contact form**: since GitHub Pages has no backend, the contact form builds a `mailto:`
   link client-side (pre-filled subject/body) rather than posting to a third-party form
   service.
-- **GitHub stats**: the "GitHub Activity" section embeds live, real-time images from the
-  public `github-readme-stats` and `ghchart` services — not hardcoded numbers.
 - **Certifications**: intentionally left empty until real credentials are added, rather than
   shipping with placeholder entries.
 - **No public phone number**: `profile.phone` is left unset by design. The contact-row code
