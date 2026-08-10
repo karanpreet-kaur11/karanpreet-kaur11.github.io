@@ -347,7 +347,7 @@ textarea:focus-visible,
 }
 .btn-ghost:hover { color: var(--text); background: rgba(var(--accent-rgb), 0.06); }
 
-.btn[aria-disabled="true"] { cursor: not-allowed; pointer-events: none; }
+.btn[aria-disabled="true"] { cursor: not-allowed; pointer-events: none; opacity: 0.45; }
 .btn-sm { padding: 9px 16px; font-size: 0.72rem; }
 
 /* ==========================================================================
@@ -828,12 +828,17 @@ textarea:focus-visible,
   font-size: 0.66rem;
 }
 
+.project-card-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
 .project-card-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .project-link {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--accent);
   text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -1050,34 +1055,6 @@ textarea:focus-visible,
   overflow: hidden;
 }
 .gh-stat-card img { width: 100%; border-radius: 8px; }
-
-/* ==========================================================================
-   Resume
-   ========================================================================== */
-
-.resume-panel {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 20px;
-}
-.resume-frame-wrap {
-  width: 100%;
-  max-width: 720px;
-  aspect-ratio: 8.5 / 11;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  background: var(--bg-soft);
-}
-.resume-frame-wrap iframe { width: 100%; height: 100%; border: none; }
-.resume-fallback { color: var(--text-dim); font-size: 0.92rem; max-width: 480px; }
-.resume-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
 
 /* ==========================================================================
    FAQ
