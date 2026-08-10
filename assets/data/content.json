@@ -4,15 +4,13 @@
     "initials": "KK",
     "roles": [
       "Computer Information Systems Student",
-      "AI & Business Systems Enthusiast",
-      "Future Software Engineer"
+      "IT • Business Systems • AI • Software Development"
     ],
     "tagline": "Computer Information Systems student with hands-on experience building and deploying full-stack web applications using Java, Spring Boot, React, Node.js, and SQL. I enjoy turning ideas into working software — from front-end interfaces to database design to server-side logic and secure authentication. Currently seeking work experience opportunities in web development, IT support, or data roles.",
     "location": "Abbotsford, BC, Canada",
     "availability": "Open to Work",
     "educationShort": "BCIS @ University of the Fraser Valley",
     "email": "karanpreet13kaur@gmail.com",
-    "phone": "778-903-6604",
     "github": "https://github.com/karanpreet-kaur11",
     "linkedin": "https://linkedin.com/in/karanpreet13kaur",
     "resumePath": "assets/resume.pdf"
@@ -169,7 +167,8 @@
       "status": "Live",
       "lastUpdated": "2026",
       "github": null,
-      "demo": null
+      "demo": null,
+      "video": null
     },
     {
       "id": "campus-store",
@@ -191,7 +190,8 @@
       "status": "Complete",
       "lastUpdated": "2026",
       "github": "https://github.com/karanpreet-kaur11/project",
-      "demo": null
+      "demo": null,
+      "video": null
     },
     {
       "id": "study-tracker",
@@ -213,7 +213,8 @@
       "status": "Complete",
       "lastUpdated": "2026",
       "github": "https://github.com/karanpreet-kaur11/finalexamcomp351",
-      "demo": null
+      "demo": null,
+      "video": null
     },
     {
       "id": "cyberdefense-game",
@@ -235,7 +236,8 @@
       "status": "Complete",
       "lastUpdated": "2026",
       "github": "https://github.com/karanpreet-kaur11/COMP350GroupProjectVersion1",
-      "demo": null
+      "demo": null,
+      "video": null
     },
     {
       "id": "urbanbite",
@@ -257,7 +259,8 @@
       "status": "Complete",
       "lastUpdated": "2025",
       "github": null,
-      "demo": null
+      "demo": null,
+      "video": null
     },
     {
       "id": "hospital-db",
@@ -279,7 +282,8 @@
       "status": "Complete",
       "lastUpdated": "2024",
       "github": null,
-      "demo": null
+      "demo": null,
+      "video": null
     },
     {
       "id": "task-api",
@@ -300,7 +304,8 @@
       "status": "Complete",
       "lastUpdated": "2024",
       "github": "https://github.com/karanpreet-kaur11/task-api",
-      "demo": null
+      "demo": null,
+      "video": null
     },
     {
       "id": "multi-table-jpa",
@@ -321,7 +326,8 @@
       "status": "Complete",
       "lastUpdated": "2024",
       "github": "https://github.com/karanpreet-kaur11/Multi-Table_Application",
-      "demo": null
+      "demo": null,
+      "video": null
     },
     {
       "id": "security-session-demo",
@@ -342,7 +348,8 @@
       "status": "Complete",
       "lastUpdated": "2024",
       "github": "https://github.com/karanpreet-kaur11/Securitysessiondemo.food",
-      "demo": null
+      "demo": null,
+      "video": null
     },
     {
       "id": "secure-task-ui",
@@ -363,7 +370,8 @@
       "status": "Complete",
       "lastUpdated": "2024",
       "github": "https://github.com/karanpreet-kaur11/secure-task-ui",
-      "demo": null
+      "demo": null,
+      "video": null
     },
     {
       "id": "wordpress-stack",
@@ -385,7 +393,8 @@
       "status": "Complete",
       "lastUpdated": "2024",
       "github": null,
-      "demo": null
+      "demo": null,
+      "video": null
     }
   ],
 
@@ -424,7 +433,6 @@
       "degree": "Bachelor of Computer Information Systems",
       "school": "University of the Fraser Valley",
       "location": "Abbotsford, BC",
-      "program": "Co-op Program",
       "start": "2023",
       "end": "2027",
       "gpa": "3.34 / 4.33",
@@ -448,7 +456,7 @@
 
   "timeline": [
     { "year": "2020", "title": "Started working", "detail": "Began working as a cashier, first hands-on exposure to computerized business systems.", "type": "experience" },
-    { "year": "2023", "title": "Started BCIS at UFV", "detail": "Enrolled in the Bachelor of Computer Information Systems co-op program.", "type": "education" },
+    { "year": "2023", "title": "Started BCIS at UFV", "detail": "Enrolled in the Bachelor of Computer Information Systems program.", "type": "education" },
     { "year": "2023", "title": "Shift Lead role", "detail": "Took on a shift lead position, training staff on POS and inventory systems.", "type": "experience" },
     { "year": "2024", "title": "First full-stack projects", "detail": "Built REST APIs, JPA applications, and security/session demos with Spring Boot.", "type": "project" },
     { "year": "2025", "title": "Dean's List", "detail": "Recognized for academic achievement in Winter 2025.", "type": "achievement" },
@@ -456,7 +464,7 @@
     { "year": "2026", "title": "Cybersecurity Defense Game", "detail": "Designed and user-tested an interactive game exploring UI/UX and OOP concepts.", "type": "project" },
     { "year": "2026", "title": "Campus Store & Study Tracker", "detail": "Shipped two larger full-stack applications covering e-commerce and HTMX-driven UIs.", "type": "project" },
     { "year": "2026", "title": "Inventory Expiry Management System", "detail": "Designed, built, secured, and deployed a live full-stack app end-to-end with React, Node.js, and SQLite.", "type": "project" },
-    { "year": "2027", "title": "Expected graduation", "detail": "On track to graduate from the BCIS co-op program.", "type": "education" }
+    { "year": "2027", "title": "Expected graduation", "detail": "On track to graduate from the BCIS program.", "type": "education" }
   ],
 
   "certifications": [
@@ -479,7 +487,7 @@
   "faqs": [
     {
       "q": "What kind of role are you looking for?",
-      "a": "I'm looking for co-op, internship, or entry-level opportunities in web development, IT support, or data-adjacent roles where I can keep building full-stack and database skills on real systems."
+      "a": "I'm looking for internship or entry-level opportunities across IT, business systems, and software development — anywhere I can keep building full-stack and database skills on real systems."
     },
     {
       "q": "Are you open to remote or hybrid work?",

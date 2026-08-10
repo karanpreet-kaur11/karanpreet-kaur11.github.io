@@ -12,6 +12,8 @@
     linkedin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A6 6 0 0 1 16 8Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>',
     mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>',
     phone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.3a16 16 0 0 0 6 6l1.5-1.5a2 2 0 0 1 2.1-.4c1 .4 2 .6 3 .7a2 2 0 0 1 1.7 2Z"/></svg>',
+    fileText: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2Z"/><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2"/></svg>',
+    play: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m10 8 6 4-6 4V8Z"/></svg>',
     mapPin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>',
     graduationCap: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>',
     layout: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>',
@@ -154,22 +156,43 @@
     return project.category.split('·')[0].trim();
   }
 
+  // Renders whichever links a project actually has — never fabricates a demo/video URL.
+  // variant 'card' renders compact buttons that stop the click from also opening the modal.
+  function projectLinkButtons(proj, variant) {
+    const stop = variant === 'card' ? ' onclick="event.stopPropagation()"' : '';
+    const size = variant === 'card' ? ' btn-sm' : '';
+    const buttons = [];
+    if (proj.demo) {
+      buttons.push(`<a href="${esc(proj.demo)}" target="_blank" rel="noopener" class="btn btn-primary${size}"${stop}>${icon('external')} Live Demo ↗</a>`);
+    } else if (proj.video) {
+      buttons.push(`<a href="${esc(proj.video)}" target="_blank" rel="noopener" class="btn btn-primary${size}"${stop}>${icon('play')} Video Demo ↗</a>`);
+    }
+    if (proj.github) {
+      buttons.push(`<a href="${esc(proj.github)}" target="_blank" rel="noopener" class="btn btn-outline${size}"${stop}>${icon('github')} GitHub ↗</a>`);
+    }
+    return buttons.join('');
+  }
+
   function renderProjects(d) {
     const categories = ['All', ...Array.from(new Set(d.projects.map(projectCategoryOf)))];
     $('#project-filters').innerHTML = categories.map((c, i) => `
       <button class="filter-btn${i === 0 ? ' active' : ''}" data-filter="${esc(c)}">${esc(c)}</button>`).join('');
 
-    $('#projects-grid').innerHTML = d.projects.map((proj) => `
+    $('#projects-grid').innerHTML = d.projects.map((proj) => {
+      const links = projectLinkButtons(proj, 'card');
+      return `
       <article class="project-card reveal" data-id="${proj.id}" data-category="${esc(projectCategoryOf(proj))}" tabindex="0" role="button" aria-label="View details for ${esc(proj.title)}">
         <div class="project-type">${esc(proj.category)}</div>
         <h3>${esc(proj.title)}</h3>
         <p>${esc(proj.summary)}</p>
         <div class="project-stack">${proj.tags.map((t) => `<span class="stack-tag">${esc(t)}</span>`).join('')}</div>
+        ${links ? `<div class="project-card-actions">${links}</div>` : ''}
         <div class="project-card-footer">
-          ${proj.github ? `<a href="${esc(proj.github)}" target="_blank" rel="noopener" class="project-link" onclick="event.stopPropagation()">${icon('github')} Code</a>` : '<span></span>'}
+          <button type="button" class="project-link" onclick="event.stopPropagation(); this.closest('.project-card').click()">Full details →</button>
           <span class="project-status">${esc(proj.status)} · ${esc(proj.lastUpdated)}</span>
         </div>
-      </article>`).join('');
+      </article>`;
+    }).join('');
 
     observeReveal();
     setupProjectFilters();
@@ -211,10 +234,7 @@
         <div class="modal-section"><h3>Lessons Learned</h3><p>${esc(proj.lessons)}</p></div>
         <div class="modal-section"><h3>Impact</h3><p>${esc(proj.impact)}</p></div>
         <div class="modal-section"><h3>Tech Stack</h3><div class="project-stack">${proj.tags.map((t) => `<span class="stack-tag">${esc(t)}</span>`).join('')}</div></div>
-        <div class="modal-actions">
-          ${proj.github ? `<a href="${esc(proj.github)}" target="_blank" rel="noopener" class="btn btn-primary">${icon('github')} View Code</a>` : ''}
-          ${proj.demo ? `<a href="${esc(proj.demo)}" target="_blank" rel="noopener" class="btn btn-outline">${icon('external')} Live Demo</a>` : ''}
-        </div>`;
+        <div class="modal-actions">${projectLinkButtons(proj, 'modal')}</div>`;
       overlay.classList.add('open');
       overlay.setAttribute('aria-hidden', 'false');
       overlay.removeAttribute('inert');
@@ -274,7 +294,7 @@
       <div class="edu-card reveal">
         <div>
           <div class="edu-degree">${esc(e.degree)}</div>
-          <div class="edu-school">${esc(e.school.toUpperCase())} · ${esc(e.location)} · ${esc(e.program)}</div>
+          <div class="edu-school">${esc(e.school.toUpperCase())} · ${esc(e.location)}</div>
           <div class="edu-details">
             <strong>Relevant Courses:</strong> ${e.courses.map(esc).join(' · ')}
             ${e.achievement ? `<br><br><strong>Achievement:</strong> ${esc(e.achievement)}` : ''}
@@ -412,27 +432,23 @@
 
   function setupResume(d) {
     const path = d.profile.resumePath;
-    const wrap = $('#resume-frame-wrap');
-    const fallback = $('#resume-fallback');
-    const downloadBtn = $('#resume-download-btn');
-    downloadBtn.href = path;
+    const heroBtn = $('#hero-resume-btn');
 
     fetch(path, { method: 'HEAD' })
       .then((res) => {
         if (!res.ok) throw new Error('missing');
-        wrap.innerHTML = `<iframe src="${esc(path)}" title="Resume preview"></iframe>`;
-        fallback.style.display = 'none';
-        downloadBtn.removeAttribute('disabled');
+        heroBtn.href = path;
+        $('#contact-links').insertAdjacentHTML('beforeend', `
+          <a class="contact-link-row" href="${esc(path)}" download>
+            <span class="ic">${icon('fileText')}</span>
+            <span><span class="label">Resume</span><span class="val">Download PDF</span></span>
+          </a>`);
       })
       .catch(() => {
-        wrap.remove();
-        downloadBtn.removeAttribute('href');
-        downloadBtn.removeAttribute('download');
-        downloadBtn.setAttribute('aria-disabled', 'true');
-        downloadBtn.setAttribute('tabindex', '-1');
-        downloadBtn.classList.remove('btn-primary');
-        downloadBtn.classList.add('btn-outline');
-        fallback.textContent = 'Resume preview coming soon — the PDF is being finalized. In the meantime, feel free to email me directly and I’ll send a copy right away.';
+        heroBtn.removeAttribute('href');
+        heroBtn.setAttribute('aria-disabled', 'true');
+        heroBtn.setAttribute('tabindex', '-1');
+        heroBtn.title = 'Resume coming soon — email me for a copy in the meantime';
       });
   }
 
@@ -532,10 +548,10 @@
       { label: 'Timeline', group: 'Section', action: () => go('#timeline') },
       { label: 'Experience', group: 'Section', action: () => go('#experience') },
       { label: 'Education', group: 'Section', action: () => go('#education') },
-      { label: 'Resume', group: 'Section', action: () => go('#resume') },
       { label: 'Contact', group: 'Section', action: () => go('#contact') },
       { label: 'Toggle dark / light mode', group: 'Action', action: () => $('#theme-toggle').click() },
       { label: 'Copy email address', group: 'Action', action: () => $('#copy-email-btn').click() },
+      { label: 'Open resume', group: 'Action', action: () => $('#hero-resume-btn').click() },
       { label: 'Open GitHub profile', group: 'Link', action: () => window.open(d.profile.github, '_blank') },
       { label: 'Open LinkedIn profile', group: 'Link', action: () => window.open(d.profile.linkedin, '_blank') },
       ...d.projects.map((p) => ({ label: p.title, group: 'Project', action: () => { go('#projects'); setTimeout(() => $(`.project-card[data-id="${p.id}"]`)?.click(), 400); } })),
