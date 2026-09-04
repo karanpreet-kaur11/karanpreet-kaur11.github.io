@@ -21,6 +21,7 @@
     database: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg>',
     cpu: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg>',
     cloud: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a5 5 0 1 1 1.3-9.8 6 6 0 0 1 11.2 3A4 4 0 0 1 20 19h-2.5Z"/></svg>',
+    shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5.5v6C4 16.5 7.4 20.7 12 22c4.6-1.3 8-5.5 8-10.5v-6L12 2Z"/><path d="m9 12 2 2 4-4"/></svg>',
     tool: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 1 0-5.4 5.4L2 19l3 3 7.3-7.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2-2 2.8-2.8Z"/></svg>',
     external: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>',
     award: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="m9 13.5-1.5 7L12 18l4.5 2.5-1.5-7"/></svg>',
@@ -181,14 +182,14 @@
     $('#projects-grid').innerHTML = d.projects.map((proj) => {
       const links = projectLinkButtons(proj, 'card');
       return `
-      <article class="project-card reveal" data-id="${proj.id}" data-category="${esc(projectCategoryOf(proj))}" tabindex="0" role="button" aria-label="View details for ${esc(proj.title)}">
+      <article class="project-card reveal" data-id="${proj.id}" data-category="${esc(projectCategoryOf(proj))}" tabindex="0" role="button" aria-label="View case study for ${esc(proj.title)}">
         <div class="project-type">${esc(proj.category)}</div>
         <h3>${esc(proj.title)}</h3>
         <p>${esc(proj.summary)}</p>
         <div class="project-stack">${proj.tags.map((t) => `<span class="stack-tag">${esc(t)}</span>`).join('')}</div>
         ${links ? `<div class="project-card-actions">${links}</div>` : ''}
         <div class="project-card-footer">
-          <button type="button" class="project-link" onclick="event.stopPropagation(); this.closest('.project-card').click()">Full details →</button>
+          <button type="button" class="project-link" onclick="event.stopPropagation(); this.closest('.project-card').click()">Case Study →</button>
           <span class="project-status">${esc(proj.status)} · ${esc(proj.lastUpdated)}</span>
         </div>
       </article>`;
