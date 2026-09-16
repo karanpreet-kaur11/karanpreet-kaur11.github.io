@@ -4,9 +4,9 @@
     "initials": "KK",
     "roles": [
       "Computer Information Systems Student",
-      "IT • Business Systems • AI • Software Development"
+      "IT Support • Software Development • Cybersecurity"
     ],
-    "tagline": "Computer Information Systems student with hands-on experience building and deploying full-stack web applications using Java, Spring Boot, React, Node.js, and SQL. I enjoy turning ideas into working software — from front-end interfaces to database design to server-side logic and secure authentication. Currently seeking work experience opportunities in web development, IT support, or data roles.",
+    "tagline": "Computer Information Systems student who works across IT support, secure software development, and cybersecurity fundamentals — not just one of the three. I build and deploy full-stack apps with Java, Spring Boot, React, and Node.js, bake in secure authentication and role-based access control by default, and I'm the person who actually troubleshoots the system and trains the team when something breaks. Looking for internship or entry-level roles in IT support, software development, or cybersecurity.",
     "location": "Abbotsford, BC, Canada",
     "availability": "Open to Work",
     "educationShort": "BCIS @ University of the Fraser Valley",
@@ -31,12 +31,13 @@
   ],
 
   "strengths": [
+    "Hands-on IT troubleshooting",
+    "Secure-by-default development",
     "Problem decomposition",
     "Full-stack debugging",
     "Database & schema design",
     "Fast learner on new stacks",
     "Clear technical documentation",
-    "Team collaboration",
     "Explaining technical concepts to non-technical users"
   ],
 
@@ -56,92 +57,83 @@
 
   "skills": [
     {
-      "category": "Frontend & Web",
-      "icon": "layout",
+      "category": "IT Support",
+      "icon": "tool",
       "items": [
-        { "name": "HTML", "level": 90 },
-        { "name": "CSS", "level": 88 },
-        { "name": "JavaScript", "level": 82 },
-        { "name": "TypeScript", "level": 72 },
-        { "name": "React", "level": 74 },
-        { "name": "Tailwind CSS", "level": 72 },
-        { "name": "Bootstrap", "level": 80 },
-        { "name": "HTMX", "level": 78 },
-        { "name": "PHP", "level": 65 },
-        { "name": "Thymeleaf", "level": 78 }
+        { "name": "End-user support & training", "level": 85 },
+        { "name": "POS & digital systems troubleshooting", "level": 85 },
+        { "name": "Windows troubleshooting", "level": 82 },
+        { "name": "Microsoft 365", "level": 80 },
+        { "name": "Networking fundamentals", "level": 65 },
+        { "name": "Linux command line", "level": 60 }
       ]
     },
     {
-      "category": "Backend & APIs",
-      "icon": "server",
+      "category": "Cybersecurity",
+      "icon": "shield",
       "items": [
-        { "name": "Java", "level": 85 },
-        { "name": "Spring Boot", "level": 82 },
+        { "name": "Secure authentication & password hashing", "level": 78 },
+        { "name": "Role-based access control", "level": 78 },
         { "name": "Spring Security", "level": 72 },
-        { "name": "Node.js", "level": 70 },
-        { "name": "Express", "level": 68 },
-        { "name": "JPA / Hibernate", "level": 75 },
-        { "name": "REST APIs", "level": 80 },
-        { "name": "Session Management", "level": 70 }
+        { "name": "Injection-safe API design", "level": 74 },
+        { "name": "Information Systems Security", "level": 65 },
+        { "name": "Cybersecurity fundamentals (Cisco)", "level": 60 }
       ]
     },
     {
-      "category": "Core Languages",
+      "category": "Development — Languages",
       "icon": "hash",
       "items": [
         { "name": "Java", "level": 85 },
-        { "name": "Python", "level": 65 },
-        { "name": "C", "level": 62 },
-        { "name": "C++", "level": 62 },
+        { "name": "SQL", "level": 85 },
+        { "name": "HTML", "level": 90 },
+        { "name": "CSS", "level": 88 },
         { "name": "JavaScript / TypeScript", "level": 78 },
-        { "name": "SQL", "level": 85 }
+        { "name": "Python", "level": 65 },
+        { "name": "PHP", "level": 65 },
+        { "name": "C", "level": 62 },
+        { "name": "C++", "level": 62 }
       ]
     },
     {
-      "category": "Data & Databases",
+      "category": "Development — Frameworks & Tools",
+      "icon": "server",
+      "items": [
+        { "name": "Spring Boot", "level": 82 },
+        { "name": "Git / GitHub", "level": 85 },
+        { "name": "REST APIs", "level": 80 },
+        { "name": "IntelliJ IDEA", "level": 82 },
+        { "name": "VS Code", "level": 88 },
+        { "name": "React", "level": 74 },
+        { "name": "Thymeleaf", "level": 78 },
+        { "name": "HTMX", "level": 78 },
+        { "name": "Hibernate (JPA)", "level": 75 },
+        { "name": "Node.js", "level": 70 },
+        { "name": "Tailwind CSS", "level": 72 },
+        { "name": "Express", "level": 68 },
+        { "name": "Docker (introductory)", "level": 60 }
+      ]
+    },
+    {
+      "category": "Databases",
       "icon": "database",
       "items": [
-        { "name": "SQL", "level": 85 },
         { "name": "MySQL", "level": 83 },
-        { "name": "SQLite", "level": 74 },
         { "name": "Database Design", "level": 82 },
         { "name": "ER Modeling", "level": 80 },
         { "name": "Normalization", "level": 78 },
+        { "name": "SQLite", "level": 74 },
         { "name": "JPQL", "level": 70 }
       ]
     },
     {
-      "category": "AI & Emerging Tech",
+      "category": "AI & Applied Learning",
       "icon": "cpu",
       "items": [
         { "name": "Prompt Engineering", "level": 78 },
-        { "name": "Generative AI Tools", "level": 75 },
-        { "name": "LLM Fundamentals", "level": 68 },
+        { "name": "Generative AI Fundamentals", "level": 75 },
         { "name": "Responsible AI", "level": 65 },
-        { "name": "ML Basics", "level": 55 }
-      ]
-    },
-    {
-      "category": "Cloud & Infrastructure",
-      "icon": "cloud",
-      "items": [
-        { "name": "Docker", "level": 65 },
-        { "name": "Linux (basic)", "level": 60 },
-        { "name": "Nginx", "level": 58 },
-        { "name": "Networking Basics", "level": 60 },
-        { "name": "Virtualization", "level": 55 }
-      ]
-    },
-    {
-      "category": "Tools & Practice",
-      "icon": "tool",
-      "items": [
-        { "name": "Git / GitHub", "level": 85 },
-        { "name": "VS Code", "level": 88 },
-        { "name": "IntelliJ IDEA", "level": 82 },
-        { "name": "Postman", "level": 75 },
-        { "name": "Microsoft 365", "level": 80 },
-        { "name": "UI/UX Fundamentals", "level": 70 }
+        { "name": "LLM Fundamentals", "level": 68 }
       ]
     }
   ],
@@ -162,7 +154,7 @@
       ],
       "architecture": "A React + TypeScript front end talking to a Node.js/Express REST API, backed by SQLite. Queries are parameterized end-to-end to keep them injection-safe, and each user's data is scoped server-side rather than filtered only in the UI. The front end is deployed on Vercel and the API on Render.",
       "challenges": "Designing per-user data isolation correctly at the API layer (not just the UI), and structuring the calendar/chart views so expiry risk is obvious at a glance rather than buried in a table.",
-      "lessons": "This project was built with AI-assisted development as part of the workflow — planning the schema and API with an LLM, then implementing and verifying it directly, which sharpened how I scope prompts and validate generated code rather than accepting it blindly.",
+      "lessons": "Learned how much of \"secure by default\" comes down to boring discipline — parameterizing every query and re-checking data scoping at the API layer instead of trusting the front end to hide what a user shouldn't see.",
       "impact": "My most complete end-to-end project so far: designed, built, secured, and actually deployed to production rather than left running only locally.",
       "status": "Live",
       "lastUpdated": "2026",
@@ -405,13 +397,13 @@
       "location": "Abbotsford, BC",
       "start": "May 2023",
       "end": "Present",
-      "description": "Supported daily operations using POS and digital inventory management systems in a fast-paced environment.",
+      "description": "A retail leadership role that doubles as hands-on IT and end-user support: I'm the one troubleshooting POS and digital system issues on the floor and training staff on the tools they use every shift, alongside standard shift-lead responsibilities.",
       "highlights": [
-        "Troubleshot POS and digital system issues, supporting both staff and customers",
-        "Trained and onboarded 3–4 new employees, explaining systems and procedures clearly to non-technical users",
+        "Troubleshot POS and digital system issues in real time, supporting both staff and customers",
+        "Trained and onboarded 3–4 new employees, explaining systems and procedures clearly to non-technical users — hands-on end-user support and training",
         "Maintained accurate records and data consistency, and handled opening and closing duties independently"
       ],
-      "technologies": ["POS Systems", "Inventory Management", "Troubleshooting"]
+      "technologies": ["IT & End-User Support", "POS Systems Troubleshooting", "Inventory Management", "Staff Training"]
     },
     {
       "role": "Cashier",
@@ -468,6 +460,20 @@
   ],
 
   "certifications": [
+    {
+      "name": "Google AI Essentials",
+      "provider": "Coursera",
+      "date": "2026",
+      "link": null,
+      "description": "Practical foundations in using generative AI tools effectively, safely, and responsibly in day-to-day work."
+    },
+    {
+      "name": "Introduction to Cybersecurity",
+      "provider": "Cisco",
+      "date": "2026",
+      "link": null,
+      "description": "Core cybersecurity concepts — threats, vulnerabilities, and defensive fundamentals — from Cisco's Networking Academy."
+    },
     {
       "name": "Generative AI, Large Language Models & Responsible AI (Skill Badges)",
       "provider": "Google Cloud",

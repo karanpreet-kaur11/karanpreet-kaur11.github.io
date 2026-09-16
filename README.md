@@ -33,7 +33,7 @@ timeline, achievements, and certifications — is read from
   the `certifications` array. The Certifications section is hidden automatically while that
   array is empty, so it only appears once real credentials are added.
 - **Add a skill category**: append to the `skills` array with an `icon` name from the set
-  defined in `assets/js/main.js` (`layout`, `server`, `database`, `cpu`, `cloud`, `tool`).
+  defined in `assets/js/main.js` (`tool`, `shield`, `hash`, `server`, `database`, `cpu`, `layout`, `cloud`).
 - **Update experience/education/timeline/achievements**: same pattern — edit the
   corresponding array.
 
